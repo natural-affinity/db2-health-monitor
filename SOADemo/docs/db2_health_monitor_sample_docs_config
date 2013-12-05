@@ -1,0 +1,21 @@
+;Configuration File made by Zend Studio PHPDocumentor Wizard, Mon Jul 23 13:27:47 EDT 2007
+pear=off
+
+packageoutput=DB2HealthMonitorSample, WebServiceConsumer, WebServiceProducer, WebServiceProducerDB
+
+output=HTML:frames:default
+
+customtags=project, updated, verified, browser, disclaimer
+
+parseprivate=on
+
+directory=C:\Program Files\Apache Group\Apache2\htdocs\SOADemo\consumer,C:\Program Files\Apache Group\Apache2\htdocs\SOADemo\producer,C:\Program Files\Apache Group\Apache2\htdocs\SOADemo\producer_db
+
+target=C:\Program Files\Apache Group\Apache2\htdocs\SOADemo\docs
+
+title=DB2 Health Monitor Sample Application Documentation
+
+sourcecode=on
+
+javadocdesc=off
+

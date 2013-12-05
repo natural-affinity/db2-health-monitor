@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "/DTD/xhtml1-Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- 
+    @project XHTML 1.0 Strict Documentation
+    @author Rizwan Tejpar <rtejpar@ca.ibm.com>
+    @version 1.0
+    @updated 07/22/07
+    @verified 07/22/07 (W3C Validator)
+    @browser IE 6, IE7, Firefox 1.5, Firefox 2
+    @disclaimer
+            Any references or links in this document to non-IBM Web sites are provided for convenience 
+            only and do not in any manner serve as an endorsement of those non-IBM Web sites or their 
+            owners. The materials at the non-IBM Web sites are not owned or licensed by IBM and use of 
+            those non-IBM Web sites is at your own risk. IBM makes no representations, warranties, or 
+            other commitments whatsoever about any non-IBM Web sites or third-party resources that may 
+            be referenced, accessible from, or linked from this document. In addition, IBM is not a 
+            party to or responsible for any transactions you may enter into with third parties, even if 
+            you learn of such parties (or use a link to such parties) from this document. You are 
+            responsible for compliance with any license terms or other obligations for use of the 
+            non-IBM Web sites in respect of your use of those non-IBM Web sites. You acknowledge and 
+            agree that IBM is not responsible for the availability of such external sites or resources, 
+            and is not responsible or liable for any content, services, products, or other materials on 
+            or available from those sites or resources. 
+    @disclaimer
+            (c) Copyright IBM Corp. 2007 All rights reserved. 
+  			
+            The following sample of source code ("Sample") is owned by International Business Machines 
+            Corporation or one of its subsidiaries ("IBM") and is copyrighted and licensed, not sold. 
+  			
+            The Sample is not part of any standard IBM product. You may use, copy, modify, and distribute 
+            the Sample in any form without payment to IBM, for the purpose of assisting you in the 
+            development of your applications.
+  			
+            The Sample code is provided to you on an "AS IS" basis, without warranty of any kind. 
+  
+            IBM HEREBY EXPRESSLY DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT 
+            LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
+             
+            Some jurisdictions do not allow for the exclusion or limitation of implied warranties, so the 
+            above limitations or exclusions may not apply to you. IBM shall not be liable for any damages 
+            you suffer as a result of using, copying, modifying or distributing the Sample, even if IBM 
+            has been advised of the possibility of such damages.    
+  -->
+	<head>
+		<title>DB2 Health Monitor Sample Application for PHP</title>
+		<link rel="stylesheet" type="text/css" href="./nav.css"></link>
+	</head>
+	
+	<body style="margin:0px;">
+		<table style="width:100%;" cellspacing="0px" cellpadding="0px">
+			<tr>
+				<td rowspan="2" style="width:200px;background-image:url('./images/DB_nav_tile.gif');" valign="top"></td> 
+				<td>
+					<table style="width:100%" cellspacing="0" cellpadding="0">
+		    			<tr class="bannerBG">
+			  				<td>
+								<img src="images/en_US/im_ban.bmp" alt="IBM Information Management" />
+			  				</td>
+			  				<td style="text-align:right">
+								<img src="./images/FS_ban_IBMLogo.gif" alt="IBM" />
+			  				</td>
+		 				</tr>
+					</table>
+				</td>
+			</tr>
+			
+  			<tr>
+  				<td class="content">  
+					<div class="content_width">
+						<h1 class="head1">Welcome to the DB2 Health Monitor Sample Application for PHP</h1>
+						<div class="edition">SOAP Edition - Version 1.0</div>
+						<br />
+						
+						<table cellspacing="0" cellpadding="0">
+			  				<tr> 
+								<td class="imageInText_placement">
+									<img src="images/image_welcome.jpg" alt="welcome" />
+								</td>
+								<td class="tableText" style="padding-left:5px" valign="top">
+									The DB2 Health Monitor Sample Application provides a demonstration as to how 
+									Web services can be built using PHP and consumed using PHP and AJAX.  All files and 
+									directories in the sample are organized and named so that you can understand
+									what is necessary to create a PHP SOAP-based Service Oriented Architecture application.
+									
+									<br /><br />
+									Although the sample is designed for a multi-tier environment, it can be deployed on a single, 
+									physical machine.  It includes setup instructions, architectural diagrams, file-level explanations, 
+									code documentation, and JavaScript widget documentation for reusing 
+									components in other Web applications.
+								</td>
+			 				</tr>
+						</table>
+						
+						<h1 class="head2green">Purpose</h1>
+						<p>
+							The DB2 Health Monitor Sample for PHP illustrates how to write a PHP Web service that
+							serves and consumes health monitoring data from a DB2 database.  It includes examples of how to
+							perform the following tasks:
+     					</p>			
+						<ul>
+							<li>Create a PHP SOAP-based Web service using the native PHP 5 SOAP extension.</li>
+							<li>Use an existing WSDL document with SOAP.</li> 
+						 	<li>Extract data as an XML document from DB2 using a single XQuery statement (pureXML&trade;).</li>
+						  	<li>Validate user and XML inputs using regular expressions.</li>
+						  	<li>Consume a PHP Web service using the WSDL document and AJAX techniques.</li>
+						  	<li>Preserve user session information throughout AJAX updates.</li>						  	
+						  	<li>Create a set of AJAX-enabled, object-oriented, JavaScript widgets.</li>
+     					</ul>     					  					
+    					
+    					<h1 class="head2green">Credits</h1>    					
+    					<p>
+    						Rizwan Tejpar designed and built the DB2 Health Monitor Sample Application for PHP.
+    						
+    						<br /><br />
+							A number of people were involved in providing feedback on the sample application.
+							Thanks go to:
+    					</p>		
+						<ul>
+			  				<li>Peter Kohlmann - Feedback and DB2 knowledge</li>
+			  				<li>Kitman Cheung - Demonstration and testing</li>
+			 				<li>Brian Olynyk - Feedback and testing</li>			 				
+    					</ul>  		
+    					
+    					<p class="cp">
+    					<br />
+    						&copy; Copyright IBM Corp. 2007. All rights reserved.
+							IBM&reg;, the IBM logo, DB2&reg;, AIX&reg;, and pureXML&trade; are 
+							registered trademarks of International Business Machines Corporation in the 
+							United States, other countries, or both.
+
+							Zend and Zend Core are registered trademarks of Zend Technologies Limited,
+							in the United States, other countries, or both.
+							
+							Mozilla&reg; and Firefox&reg; are registered trademarks of the Mozilla Foundation in the
+							United States and other countries.
+							
+							Microsoft, Windows, Windows NT, Internet Explorer&reg;, and the Windows logo are 
+							trademarks of Microsoft Corporation in the United States, other countries, or
+							both.
+							
+							Linux is a registered trademark of Linus Torvalds in the United
+							States, other countries, or both.
+							
+							Other company, product, or service names
+							may be trademarks or service marks of others.
+						</p>		
+    				</div>			
+  				</td>
+  			</tr>  
+		</table>
+
+		<div class="navigation">
+			<img src="images/FS_ban_mosaic.gif" alt="Data Management Mosiac imagery" />
+    		<div class="container"> 
+     			<div class="left-nav"> 
+       				<div class="top-level"> 
+        				<a class="active" href="./index.html">Welcome</a> 
+        				<a href="./requirements.html">Requirements</a>
+        				<a href="setup.html">Setup</a> 
+          					<div class="second-level"> 
+    							<a href="setup_database.html">Creating the Sample Database</a> 
+		        				<a href="setup_php.html">Setting up PHP</a> 
+          						<a href="setup_sample.html">Setting up the Sample</a> 
+         						<a href="setup_testdb.html">Testing the Connection</a> 
+         						<a href="setup_testservice.html">Testing the Service</a>        			           	          	
+ 		   					</div>		
+		       			<a href="using.html">Using</a>
+      	        		<div class="second-level"> 
+	      	        		<a href="../SOADemo/index.html">DB2 Health Monitor Sample</a>         	          	
+		       			</div>	 		   					
+          				<a href="./architecture.html">Architecture</a> 
+						<div class="second-level">           	
+							<a href="./architecture_directory.html">Directory Structure</a>
+		          			<a href="./architecture_files.html">File Breakdown</a> 
+		          			<a href="./architecture_deploy.html">Deployment Models</a>
+        		  			<a href="./architecture_errors.html">Error Handling</a> 
+        		  			<a href="./architecture_widgets.html">JavaScript Widgets</a>          	
+						</div>     					   		  	
+          				<a href="lessons.html">Lessons Learned</a>
+       				</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

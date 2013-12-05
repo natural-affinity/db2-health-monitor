@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 
+    @project Web Service WSDL Document
+    @author Rizwan Tejpar <rtejpar@ca.ibm.com>
+    @version 1.0
+    @updated 07/22/07
+    @verified 07/22/07 (W3C Validator)
+    @browser IE6, IE7, Firefox 1.5, Firefox 2
+    @disclaimer
+            Any references or links in this document to non-IBM Web sites are provided for convenience 
+            only and do not in any manner serve as an endorsement of those non-IBM Web sites or their 
+            owners. The materials at the non-IBM Web sites are not owned or licensed by IBM and use of 
+            those non-IBM Web sites is at your own risk. IBM makes no representations, warranties, or 
+            other commitments whatsoever about any non-IBM Web sites or third-party resources that may 
+            be referenced, accessible from, or linked from this document. In addition, IBM is not a 
+            party to or responsible for any transactions you may enter into with third parties, even if 
+            you learn of such parties (or use a link to such parties) from this document. You are 
+            responsible for compliance with any license terms or other obligations for use of the 
+            non-IBM Web sites in respect of your use of those non-IBM Web sites. You acknowledge and 
+            agree that IBM is not responsible for the availability of such external sites or resources, 
+            and is not responsible or liable for any content, services, products, or other materials on 
+            or available from those sites or resources. 
+    @disclaimer
+            (c) Copyright IBM Corp. 2007 All rights reserved. 
+  			
+            The following sample of source code ("Sample") is owned by International Business Machines 
+            Corporation or one of its subsidiaries ("IBM") and is copyrighted and licensed, not sold. 
+  			
+            The Sample is not part of any standard IBM product. You may use, copy, modify, and distribute 
+            the Sample in any form without payment to IBM, for the purpose of assisting you in the 
+            development of your applications.
+  			
+            The Sample code is provided to you on an "AS IS" basis, without warranty of any kind. 
+  
+            IBM HEREBY EXPRESSLY DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT 
+            LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
+             
+            Some jurisdictions do not allow for the exclusion or limitation of implied warranties, so the 
+            above limitations or exclusions may not apply to you. IBM shall not be liable for any damages 
+            you suffer as a result of using, copying, modifying or distributing the Sample, even if IBM 
+            has been advised of the possibility of such damages.    
+  -->
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:DB2_HEALTH_MONITOR_SERVICE" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:DB2_HEALTH_MONITOR_SERVICE">
+<types>
+<xsd:schema targetNamespace="urn:DB2_HEALTH_MONITOR_SERVICE">
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="DB2_Result">
+  <xsd:sequence>
+   <xsd:element name="DB2Health_Report" type="DB2Health_ReportType" minOccurs="1" maxOccurs="1"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="DB2Health_ReportType">
+  <xsd:sequence>
+   <xsd:element name="InfoSet" type="InfoSetType" minOccurs="1" maxOccurs="1"/>
+   <xsd:element name="HIDefinitionSet" type="HIDefinitionSetType" minOccurs="1" maxOccurs="1"/>
+   <xsd:element name="AlertSet" type="AlertSetType" minOccurs="1" maxOccurs="1"/>
+   <xsd:element name="ErrorSet" type="ErrorSetType" minOccurs="1" maxOccurs="1"/>
+  </xsd:sequence>
+    <xsd:attribute name="schemaVersion" type="xsd:double" use="required"/>
+    <xsd:attribute name="lang" type="xsd:string" use="optional"/>
+    <xsd:attribute name="timestamp" type="xsd:dateTime" use="required"/>
+    <xsd:attribute name="instance" type="xsd:string" use="optional"/>
+    <xsd:attribute name="database" type="xsd:string" use="optional"/>
+    <xsd:attribute name="highestAlertState" type="xsd:string" use="required"/>
+ </xsd:complexType>
+ <xsd:complexType name="AlertSetType">
+  <xsd:sequence>
+   <xsd:element name="HealthAlert" type="HealthAlertType" minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="HealthAlertType">
+  <xsd:sequence>
+   <xsd:element name="DB2_Object" type="DB2_ObjectType" minOccurs="1" maxOccurs="1"/>
+   <xsd:element name="HiFormulaValue" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+   <xsd:element name="HiAdditionalInfo" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+   <xsd:element name="alertHistory" type="HiHistoryType" minOccurs="1" maxOccurs="1"/>
+  </xsd:sequence>
+    <xsd:attribute name="hiIdentifier" type="xsd:integer" use="required"/>
+    <xsd:attribute name="hiAlertState" type="HealthIndicatorAlertStateExtensionType" use="required"/>
+    <xsd:attribute name="hiValue" type="xsd:string" use="required"/>
+    <xsd:attribute name="hiTimestamp" type="xsd:dateTime" use="required"/>
+ </xsd:complexType>
+ <xsd:complexType name="HiHistoryType">
+  <xsd:sequence>
+   <xsd:element name="alertHistoryData" type="HiHistoryDataType" minOccurs="0" maxOccurs="10"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="HiHistoryDataType">
+    <xsd:attribute name="hiIdentifier" type="xsd:integer" use="optional"/>
+    <xsd:attribute name="object_name" type="DB2_ObjectNamesExtensionType" use="optional"/>
+    <xsd:attribute name="hiValue" type="xsd:string" use="required"/>
+    <xsd:attribute name="hiTimestamp" type="xsd:dateTime" use="required"/>
+    <xsd:attribute name="hiAlertState" type="HealthIndicatorAlertStateExtensionType" use="required"/>
+    <xsd:attribute name="hiFormulaValue" type="xsd:string" use="optional"/>
+ </xsd:complexType>
+ <xsd:complexType name="HIDefinitionSetType">
+  <xsd:sequence>
+   <xsd:element name="HIDefinition" type="HIDefinitionType" minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="HIDefinitionType">
+  <xsd:sequence>
+   <xsd:element name="HISettings" type="HISettingsType" minOccurs="1" maxOccurs="1"/>
+  </xsd:sequence>
+    <xsd:attribute name="hiName" type="xsd:string" use="required"/>
+    <xsd:attribute name="hiShortDesc" type="xsd:string" use="required"/>
+    <xsd:attribute name="hiLongDesc" type="xsd:string" use="required"/>
+    <xsd:attribute name="hiIdentifier" type="xsd:integer" use="required"/>
+    <xsd:attribute name="hiType" type="xsd:string" use="required"/>
+    <xsd:attribute name="hiFormula" type="xsd:string" use="required"/>
+    <xsd:attribute name="hiUnit" type="xsd:string" use="required"/>
+ </xsd:complexType>
+ <xsd:complexType name="HISettingsType">
+    <xsd:attribute name="sensitivity" type="xsd:string" use="required"/>
+    <xsd:attribute name="evaluate" type="xsd:boolean" use="required"/>
+    <xsd:attribute name="warningThreshold" type="xsd:integer" use="required"/>
+    <xsd:attribute name="alarmThreshold" type="xsd:integer" use="required"/>
+ </xsd:complexType>
+ <xsd:complexType name="DB2_ObjectType">
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <xsd:attribute name="type" type="DB2_ObjectNamesExtensionType" use="required"/>
+ </xsd:complexType>
+ <xsd:complexType name="InfoSetType">
+    <xsd:attribute name="snapshot_timestamp" type="xsd:dateTime" use="optional"/>
+    <xsd:attribute name="database_status" type="xsd:string" use="optional"/>
+    <xsd:attribute name="last_backup" type="xsd:string" use="optional"/>
+    <xsd:attribute name="host_name" type="xsd:string" use="optional"/>
+    <xsd:attribute name="rows_read" type="xsd:integer" use="optional"/>
+    <xsd:attribute name="rows_written" type="xsd:integer" use="optional"/>
+    <xsd:attribute name="total_memory" type="xsd:integer" use="optional"/>
+    <xsd:attribute name="memory_usage" type="xsd:integer" use="optional"/>
+    <xsd:attribute name="database_size" type="xsd:integer" use="optional"/>
+    <xsd:attribute name="database_capacity" type="xsd:integer" use="optional"/>
+ </xsd:complexType>
+ <xsd:complexType name="ErrorSetType">
+  <xsd:sequence>
+   <xsd:element name="SOA_ERROR_CODE" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+   <xsd:element name="SOA_ERROR_MESSAGE" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+   <xsd:element name="SQL_ERROR_CODE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+   <xsd:element name="SQL_ERROR_MESSAGE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:simpleType name="HealthIndicatorAlertStateType">
+  <xsd:restriction base="xsd:string">
+  <xsd:enumeration value="unknown"/>
+  <xsd:enumeration value="normal"/>
+  <xsd:enumeration value="attention"/>
+  <xsd:enumeration value="warning"/>
+  <xsd:enumeration value="alarm"/>
+  <xsd:enumeration value="not yet evaluated"/>
+  </xsd:restriction>
+ </xsd:simpleType> <xsd:simpleType name="DB2_ObjectNamesType">
+  <xsd:restriction base="xsd:string">
+  <xsd:enumeration value="table"/>
+  <xsd:enumeration value="index"/>
+  <xsd:enumeration value="tablespace"/>
+  <xsd:enumeration value="container"/>
+  <xsd:enumeration value="database"/>
+  <xsd:enumeration value="instance"/>
+  <xsd:enumeration value="DB"/>
+  <xsd:enumeration value="DBM"/>
+  <xsd:enumeration value="TS"/>
+  <xsd:enumeration value="TSC"/>
+  </xsd:restriction>
+ </xsd:simpleType> <xsd:simpleType name="HealthIndicatorAlertStateExtensionType">
+  <xsd:restriction base="xsd:string"/>
+ </xsd:simpleType> <xsd:simpleType name="DB2_ObjectNamesExtensionType">
+  <xsd:restriction base="xsd:string"/>
+ </xsd:simpleType></xsd:schema>
+</types>
+<message name="GET_DB_HISTORY_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_DB_HISTORY_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_DB_HIGHEST_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_DB_HIGHEST_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_DB_DETAILED_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_DB_DETAILED_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_DBM_HISTORY_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_DBM_HISTORY_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_DBM_HIGHEST_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_DBM_HIGHEST_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_DBM_DETAILED_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_DBM_DETAILED_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_CONT_HISTORY_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_CONT_HISTORY_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_CONT_HIGHEST_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_CONT_HIGHEST_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_CONT_DETAILED_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_CONT_DETAILED_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_TBS_HISTORY_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_TBS_HISTORY_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_TBS_HIGHEST_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_TBS_HIGHEST_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_TBS_DETAILED_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_TBS_DETAILED_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_ALL_HISTORY_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_ALL_HISTORY_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_ALL_DETAILED_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_ALL_DETAILED_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<message name="GET_ALL_HIGHEST_INFORequest">
+  <part name="username" type="xsd:string" />
+  <part name="password" type="xsd:string" />
+  <part name="database" type="xsd:string" />
+  <part name="port" type="xsd:string" />
+  <part name="language" type="xsd:string" />
+  <part name="defset" type="xsd:boolean" /></message>
+<message name="GET_ALL_HIGHEST_INFOResponse">
+  <part name="return" type="tns:DB2_Result" /></message>
+<portType name="DB2_HEALTH_MONITOR_SERVICEPortType">
+  <operation name="GET_DB_HISTORY_INFO">
+    <documentation>Returns history alert information for the specified database</documentation>
+    <input message="tns:GET_DB_HISTORY_INFORequest"/>
+    <output message="tns:GET_DB_HISTORY_INFOResponse"/>
+  </operation>
+  <operation name="GET_DB_HIGHEST_INFO">
+    <documentation>Returns highest alert information for the specified database</documentation>
+    <input message="tns:GET_DB_HIGHEST_INFORequest"/>
+    <output message="tns:GET_DB_HIGHEST_INFOResponse"/>
+  </operation>
+  <operation name="GET_DB_DETAILED_INFO">
+    <documentation>Returns detailed health alert information for the specified database</documentation>
+    <input message="tns:GET_DB_DETAILED_INFORequest"/>
+    <output message="tns:GET_DB_DETAILED_INFOResponse"/>
+  </operation>
+  <operation name="GET_DBM_HISTORY_INFO">
+    <documentation>Returns history alert information for the specified database manager</documentation>
+    <input message="tns:GET_DBM_HISTORY_INFORequest"/>
+    <output message="tns:GET_DBM_HISTORY_INFOResponse"/>
+  </operation>
+  <operation name="GET_DBM_HIGHEST_INFO">
+    <documentation>Returns highest alert information for the specified database manager</documentation>
+    <input message="tns:GET_DBM_HIGHEST_INFORequest"/>
+    <output message="tns:GET_DBM_HIGHEST_INFOResponse"/>
+  </operation>
+  <operation name="GET_DBM_DETAILED_INFO">
+    <documentation>Returns detailed health alert information for the specified database manager</documentation>
+    <input message="tns:GET_DBM_DETAILED_INFORequest"/>
+    <output message="tns:GET_DBM_DETAILED_INFOResponse"/>
+  </operation>
+  <operation name="GET_CONT_HISTORY_INFO">
+    <documentation>Returns history alert information for the specified container</documentation>
+    <input message="tns:GET_CONT_HISTORY_INFORequest"/>
+    <output message="tns:GET_CONT_HISTORY_INFOResponse"/>
+  </operation>
+  <operation name="GET_CONT_HIGHEST_INFO">
+    <documentation>Returns highest alert information for the specified container</documentation>
+    <input message="tns:GET_CONT_HIGHEST_INFORequest"/>
+    <output message="tns:GET_CONT_HIGHEST_INFOResponse"/>
+  </operation>
+  <operation name="GET_CONT_DETAILED_INFO">
+    <documentation>Returns detailed alert information for the specified container</documentation>
+    <input message="tns:GET_CONT_DETAILED_INFORequest"/>
+    <output message="tns:GET_CONT_DETAILED_INFOResponse"/>
+  </operation>
+  <operation name="GET_TBS_HISTORY_INFO">
+    <documentation>Returns history alert information for the specified tablespace</documentation>
+    <input message="tns:GET_TBS_HISTORY_INFORequest"/>
+    <output message="tns:GET_TBS_HISTORY_INFOResponse"/>
+  </operation>
+  <operation name="GET_TBS_HIGHEST_INFO">
+    <documentation>Returns highest alert information for the specified tablespace</documentation>
+    <input message="tns:GET_TBS_HIGHEST_INFORequest"/>
+    <output message="tns:GET_TBS_HIGHEST_INFOResponse"/>
+  </operation>
+  <operation name="GET_TBS_DETAILED_INFO">
+    <documentation>Returns detailed alert information for the specified tablespace</documentation>
+    <input message="tns:GET_TBS_DETAILED_INFORequest"/>
+    <output message="tns:GET_TBS_DETAILED_INFOResponse"/>
+  </operation>
+  <operation name="GET_ALL_HISTORY_INFO">
+    <documentation>Returns all history alert information</documentation>
+    <input message="tns:GET_ALL_HISTORY_INFORequest"/>
+    <output message="tns:GET_ALL_HISTORY_INFOResponse"/>
+  </operation>
+  <operation name="GET_ALL_DETAILED_INFO">
+    <documentation>Returns all detailed alert information</documentation>
+    <input message="tns:GET_ALL_DETAILED_INFORequest"/>
+    <output message="tns:GET_ALL_DETAILED_INFOResponse"/>
+  </operation>
+  <operation name="GET_ALL_HIGHEST_INFO">
+    <documentation>Returns highest alert information</documentation>
+    <input message="tns:GET_ALL_HIGHEST_INFORequest"/>
+    <output message="tns:GET_ALL_HIGHEST_INFOResponse"/>
+  </operation>
+</portType>
+<binding name="DB2_HEALTH_MONITOR_SERVICEBinding" type="tns:DB2_HEALTH_MONITOR_SERVICEPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="GET_DB_HISTORY_INFO">
+    <soap:operation soapAction="urn:#GET_DB_HISTORY_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_DB_HIGHEST_INFO">
+    <soap:operation soapAction="urn:#GET_DB_HIGHEST_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_DB_DETAILED_INFO">
+    <soap:operation soapAction="urn:#GET_DB_DETAILED_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_DBM_HISTORY_INFO">
+    <soap:operation soapAction="urn:#GET_DBM_HISTORY_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_DBM_HIGHEST_INFO">
+    <soap:operation soapAction="urn:#GET_DBM_HIGHEST_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_DBM_DETAILED_INFO">
+    <soap:operation soapAction="urn:#GET_DBM_DETAILED_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_CONT_HISTORY_INFO">
+    <soap:operation soapAction="urn:#GET_CONT_HISTORY_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_CONT_HIGHEST_INFO">
+    <soap:operation soapAction="urn:#GET_CONT_HIGHEST_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_CONT_DETAILED_INFO">
+    <soap:operation soapAction="urn:#GET_CONT_DETAILED_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_TBS_HISTORY_INFO">
+    <soap:operation soapAction="urn:#GET_TBS_HISTORY_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_TBS_HIGHEST_INFO">
+    <soap:operation soapAction="urn:#GET_TBS_HIGHEST_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_TBS_DETAILED_INFO">
+    <soap:operation soapAction="urn:#GET_TBS_DETAILED_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_ALL_HISTORY_INFO">
+    <soap:operation soapAction="urn:#GET_ALL_HISTORY_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_ALL_DETAILED_INFO">
+    <soap:operation soapAction="urn:#GET_ALL_DETAILED_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="GET_ALL_HIGHEST_INFO">
+    <soap:operation soapAction="urn:#GET_ALL_HIGHEST_INFO" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:DB2_HEALTH_MONITOR_SERVICE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="DB2_HEALTH_MONITOR_SERVICE">
+  <port name="DB2_HEALTH_MONITOR_SERVICEPort" binding="tns:DB2_HEALTH_MONITOR_SERVICEBinding">
+    <soap:address location="http://localhost/SOADemo/producer/db2soa.soap.server.php"/>
+  </port>
+</service>
+</definitions>

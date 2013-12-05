@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+<!--
+    @disclaimer
+            Any references or links in this document to non-IBM Web sites are provided for convenience 
+            only and do not in any manner serve as an endorsement of those non-IBM Web sites or their 
+            owners. The materials at the non-IBM Web sites are not owned or licensed by IBM and use of 
+            those non-IBM Web sites is at your own risk. IBM makes no representations, warranties, or 
+            other commitments whatsoever about any non-IBM Web sites or third-party resources that may 
+            be referenced, accessible from, or linked from this document. In addition, IBM is not a 
+            party to or responsible for any transactions you may enter into with third parties, even if 
+            you learn of such parties (or use a link to such parties) from this document. You are 
+            responsible for compliance with any license terms or other obligations for use of the 
+            non-IBM Web sites in respect of your use of those non-IBM Web sites. You acknowledge and 
+            agree that IBM is not responsible for the availability of such external sites or resources, 
+            and is not responsible or liable for any content, services, products, or other materials on 
+            or available from those sites or resources. 
+-->
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for db2soa.soap.client.header.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file db2soa.soap.client.header.php</h1>
+<p>Documentation is available at <a href="../DB2HealthMonitorSample/WebServiceConsumer/_consumer---db2soa.soap.client.header.php.html">db2soa.soap.client.header.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-tag">@project</span><span class="src-doc">&nbsp;PHP&nbsp;Web&nbsp;Service&nbsp;Consumer&nbsp;Header</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@author</span><span class="src-doc">&nbsp;Rizwan&nbsp;Tejpar&nbsp;&lt;rtejpar@ca.ibm.com&gt;</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@version</span><span class="src-doc">&nbsp;1.0</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-tag">@updated</span><span class="src-doc">&nbsp;07/22/07</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-tag">@verified</span><span class="src-doc">&nbsp;07/22/07&nbsp;(Zend&nbsp;Studio)</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-tag">@browser</span><span class="src-doc">&nbsp;IE6,&nbsp;IE7,&nbsp;Firefox&nbsp;1.5,&nbsp;Firefox&nbsp;2</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-tag">@disclaimer</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Any&nbsp;references&nbsp;or&nbsp;links&nbsp;in&nbsp;this&nbsp;document&nbsp;to&nbsp;non-IBM&nbsp;Web&nbsp;sites&nbsp;are&nbsp;provided&nbsp;for&nbsp;convenience</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;only&nbsp;and&nbsp;do&nbsp;not&nbsp;in&nbsp;any&nbsp;manner&nbsp;serve&nbsp;as&nbsp;an&nbsp;endorsement&nbsp;of&nbsp;those&nbsp;non-IBM&nbsp;Web&nbsp;sites&nbsp;or&nbsp;their</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;owners.&nbsp;The&nbsp;materials&nbsp;at&nbsp;the&nbsp;non-IBM&nbsp;Web&nbsp;sites&nbsp;are&nbsp;not&nbsp;owned&nbsp;or&nbsp;licensed&nbsp;by&nbsp;IBM&nbsp;and&nbsp;use&nbsp;of</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;those&nbsp;non-IBM&nbsp;Web&nbsp;sites&nbsp;is&nbsp;at&nbsp;your&nbsp;own&nbsp;risk.&nbsp;IBM&nbsp;makes&nbsp;no&nbsp;representations,&nbsp;warranties,&nbsp;or</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other&nbsp;commitments&nbsp;whatsoever&nbsp;about&nbsp;any&nbsp;non-IBM&nbsp;Web&nbsp;sites&nbsp;or&nbsp;third-party&nbsp;resources&nbsp;that&nbsp;may</span></div></li>
+<li><div class="src-line"><a name="a16"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;referenced,&nbsp;accessible&nbsp;from,&nbsp;or&nbsp;linked&nbsp;from&nbsp;this&nbsp;document.&nbsp;In&nbsp;addition,&nbsp;IBM&nbsp;is&nbsp;not&nbsp;a</span></div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;party&nbsp;to&nbsp;or&nbsp;responsible&nbsp;for&nbsp;any&nbsp;transactions&nbsp;you&nbsp;may&nbsp;enter&nbsp;into&nbsp;with&nbsp;third&nbsp;parties,&nbsp;even&nbsp;if</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;you&nbsp;learn&nbsp;of&nbsp;such&nbsp;parties&nbsp;(or&nbsp;use&nbsp;a&nbsp;link&nbsp;to&nbsp;such&nbsp;parties)&nbsp;from&nbsp;this&nbsp;document.&nbsp;You&nbsp;are</span></div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;responsible&nbsp;for&nbsp;compliance&nbsp;with&nbsp;any&nbsp;license&nbsp;terms&nbsp;or&nbsp;other&nbsp;obligations&nbsp;for&nbsp;use&nbsp;of&nbsp;the</span></div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;non-IBM&nbsp;Web&nbsp;sites&nbsp;in&nbsp;respect&nbsp;of&nbsp;your&nbsp;use&nbsp;of&nbsp;those&nbsp;non-IBM&nbsp;Web&nbsp;sites.&nbsp;You&nbsp;acknowledge&nbsp;and</span></div></li>
+<li><div class="src-line"><a name="a21"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;agree&nbsp;that&nbsp;IBM&nbsp;is&nbsp;not&nbsp;responsible&nbsp;for&nbsp;the&nbsp;availability&nbsp;of&nbsp;such&nbsp;external&nbsp;sites&nbsp;or&nbsp;resources,</span></div></li>
+<li><div class="src-line"><a name="a22"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;is&nbsp;not&nbsp;responsible&nbsp;or&nbsp;liable&nbsp;for&nbsp;any&nbsp;content,&nbsp;services,&nbsp;products,&nbsp;or&nbsp;other&nbsp;materials&nbsp;on</span></div></li>
+<li><div class="src-line"><a name="a23"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;available&nbsp;from&nbsp;those&nbsp;sites&nbsp;or&nbsp;resources.</span></div></li>
+<li><div class="src-line"><a name="a24"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-tag">@disclaimer</span></div></li>
+<li><div class="src-line"><a name="a25"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(c)&nbsp;Copyright&nbsp;IBM&nbsp;Corp.&nbsp;2007&nbsp;All&nbsp;rights&nbsp;reserved.</span></div></li>
+<li><div class="src-line"><a name="a26"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a27"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;following&nbsp;sample&nbsp;of&nbsp;source&nbsp;code&nbsp;(&quot;Sample&quot;)&nbsp;is&nbsp;owned&nbsp;by&nbsp;International&nbsp;Business&nbsp;Machines</span></div></li>
+<li><div class="src-line"><a name="a28"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Corporation&nbsp;or&nbsp;one&nbsp;of&nbsp;its&nbsp;subsidiaries&nbsp;(&quot;IBM&quot;)&nbsp;and&nbsp;is&nbsp;copyrighted&nbsp;and&nbsp;licensed,&nbsp;not&nbsp;sold.</span></div></li>
+<li><div class="src-line"><a name="a29"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a30"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;Sample&nbsp;is&nbsp;not&nbsp;part&nbsp;of&nbsp;any&nbsp;standard&nbsp;IBM&nbsp;product.&nbsp;You&nbsp;may&nbsp;use,&nbsp;copy,&nbsp;modify,&nbsp;and&nbsp;distribute</span></div></li>
+<li><div class="src-line"><a name="a31"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;Sample&nbsp;in&nbsp;any&nbsp;form&nbsp;without&nbsp;payment&nbsp;to&nbsp;IBM,&nbsp;for&nbsp;the&nbsp;purpose&nbsp;of&nbsp;assisting&nbsp;you&nbsp;in&nbsp;the</span></div></li>
+<li><div class="src-line"><a name="a32"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;development&nbsp;of&nbsp;your&nbsp;applications.</span></div></li>
+<li><div class="src-line"><a name="a33"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a34"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;Sample&nbsp;code&nbsp;is&nbsp;provided&nbsp;to&nbsp;you&nbsp;on&nbsp;an&nbsp;&quot;AS&nbsp;IS&quot;&nbsp;basis,&nbsp;without&nbsp;warranty&nbsp;of&nbsp;any&nbsp;kind.</span></div></li>
+<li><div class="src-line"><a name="a35"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a36"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IBM&nbsp;HEREBY&nbsp;EXPRESSLY&nbsp;DISCLAIMS&nbsp;ALL&nbsp;WARRANTIES,&nbsp;EITHER&nbsp;EXPRESS&nbsp;OR&nbsp;IMPLIED,&nbsp;INCLUDING,&nbsp;BUT&nbsp;NOT</span></div></li>
+<li><div class="src-line"><a name="a37"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIMITED&nbsp;TO,&nbsp;THE&nbsp;IMPLIED&nbsp;WARRANTIES&nbsp;OF&nbsp;MERCHANTABILITY&nbsp;AND&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.</span></div></li>
+<li><div class="src-line"><a name="a38"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a39"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;jurisdictions&nbsp;do&nbsp;not&nbsp;allow&nbsp;for&nbsp;the&nbsp;exclusion&nbsp;or&nbsp;limitation&nbsp;of&nbsp;implied&nbsp;warranties,&nbsp;so&nbsp;the</span></div></li>
+<li><div class="src-line"><a name="a40"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;above&nbsp;limitations&nbsp;or&nbsp;exclusions&nbsp;may&nbsp;not&nbsp;apply&nbsp;to&nbsp;you.&nbsp;IBM&nbsp;shall&nbsp;not&nbsp;be&nbsp;liable&nbsp;for&nbsp;any&nbsp;damages</span></div></li>
+<li><div class="src-line"><a name="a41"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;you&nbsp;suffer&nbsp;as&nbsp;a&nbsp;result&nbsp;of&nbsp;using,&nbsp;copying,&nbsp;modifying&nbsp;or&nbsp;distributing&nbsp;the&nbsp;Sample,&nbsp;even&nbsp;if&nbsp;IBM</span></div></li>
+<li><div class="src-line"><a name="a42"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;has&nbsp;been&nbsp;advised&nbsp;of&nbsp;the&nbsp;possibility&nbsp;of&nbsp;such&nbsp;damages.</span></div></li>
+<li><div class="src-line"><a name="a43"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;DB2HealthMonitorSample</span></div></li>
+<li><div class="src-line"><a name="a44"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@subpackage</span><span class="src-doc">&nbsp;WebServiceConsumer</span></div></li>
+<li><div class="src-line"><a name="a45"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a47"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a48"></a><span class="src-doc">&nbsp;*&nbsp;Stores&nbsp;Web&nbsp;Service&nbsp;Consumer&nbsp;header&nbsp;information&nbsp;such&nbsp;as&nbsp;relative&nbsp;urls&nbsp;for&nbsp;the&nbsp;login&nbsp;page,&nbsp;main&nbsp;page,</span></div></li>
+<li><div class="src-line"><a name="a49"></a><span class="src-doc">&nbsp;*&nbsp;and&nbsp;XML&nbsp;configuration&nbsp;file.</span></div></li>
+<li><div class="src-line"><a name="a50"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a52"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a53"></a><span class="src-doc">&nbsp;*&nbsp;Web&nbsp;Service&nbsp;Consumer&nbsp;XML&nbsp;Configuration&nbsp;File</span></div></li>
+<li><div class="src-line"><a name="a54"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@global&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$CONFIG_XML&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a55"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a56"></a><span class="src-var">$CONFIG_XML&nbsp;</span>=&nbsp;<span class="src-str">'./config.xml'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a58"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a59"></a><span class="src-doc">&nbsp;*&nbsp;Redirect&nbsp;URL&nbsp;-&nbsp;Login&nbsp;page</span></div></li>
+<li><div class="src-line"><a name="a60"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@global&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$LOGIN_PAGE_URL&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a61"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a62"></a><span class="src-var">$LOGIN_PAGE_URL&nbsp;</span>=&nbsp;<span class="src-str">'../index.html'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a64"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a65"></a><span class="src-doc">&nbsp;*&nbsp;Redirect&nbsp;URL&nbsp;-&nbsp;Main&nbsp;Console&nbsp;page</span></div></li>
+<li><div class="src-line"><a name="a66"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@global&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$MAIN_PAGE_URL&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a67"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a68"></a><span class="src-var">$MAIN_PAGE_URL&nbsp;</span>=&nbsp;<span class="src-str">'../main.html'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a70"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a71"></a><span class="src-doc">&nbsp;*&nbsp;Delimiter&nbsp;used&nbsp;to&nbsp;divide&nbsp;URL&nbsp;Query&nbsp;String&nbsp;Parameters</span></div></li>
+<li><div class="src-line"><a name="a72"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@global&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$QUERY_PARAM_DELIMITER&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a73"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a74"></a><span class="src-var">$QUERY_PARAM_DELIMITER&nbsp;</span>=&nbsp;<span class="src-str">'&amp;'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a76"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 23 Jul 2007 13:27:54 -0400 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.2</a>
+	</p>
+	</body>
+</html>
