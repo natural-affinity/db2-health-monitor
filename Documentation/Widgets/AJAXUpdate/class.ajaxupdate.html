@@ -1,265 +1,264 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "/DTD/xhtml1-Strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- 
-    @project XHTML 1.0 Strict AJAXUpdate Widget Documentation
+<!--
+    @project XHTML 1.0 Strict Documentation
     @author Rizwan Tejpar <rtejpar@ca.ibm.com>
     @version 1.0
     @updated 07/22/07
     @verified 07/22/07 (W3C Validator)
-    @browser IE6, IE7, Firefox 1.5, Firefox 2
+    @browser IE 6, IE7, Firefox 1.5, Firefox 2
     @disclaimer
-            Any references or links in this document to non-IBM Web sites are provided for convenience 
-            only and do not in any manner serve as an endorsement of those non-IBM Web sites or their 
-            owners. The materials at the non-IBM Web sites are not owned or licensed by IBM and use of 
-            those non-IBM Web sites is at your own risk. IBM makes no representations, warranties, or 
-            other commitments whatsoever about any non-IBM Web sites or third-party resources that may 
-            be referenced, accessible from, or linked from this document. In addition, IBM is not a 
-            party to or responsible for any transactions you may enter into with third parties, even if 
-            you learn of such parties (or use a link to such parties) from this document. You are 
-            responsible for compliance with any license terms or other obligations for use of the 
-            non-IBM Web sites in respect of your use of those non-IBM Web sites. You acknowledge and 
-            agree that IBM is not responsible for the availability of such external sites or resources, 
-            and is not responsible or liable for any content, services, products, or other materials on 
-            or available from those sites or resources. 
+            Any references or links in this document to non-IBM Web sites are provided for convenience
+            only and do not in any manner serve as an endorsement of those non-IBM Web sites or their
+            owners. The materials at the non-IBM Web sites are not owned or licensed by IBM and use of
+            those non-IBM Web sites is at your own risk. IBM makes no representations, warranties, or
+            other commitments whatsoever about any non-IBM Web sites or third-party resources that may
+            be referenced, accessible from, or linked from this document. In addition, IBM is not a
+            party to or responsible for any transactions you may enter into with third parties, even if
+            you learn of such parties (or use a link to such parties) from this document. You are
+            responsible for compliance with any license terms or other obligations for use of the
+            non-IBM Web sites in respect of your use of those non-IBM Web sites. You acknowledge and
+            agree that IBM is not responsible for the availability of such external sites or resources,
+            and is not responsible or liable for any content, services, products, or other materials on
+            or available from those sites or resources.
     @disclaimer
-            (c) Copyright IBM Corp. 2007 All rights reserved. 
-  			
-            The following sample of source code ("Sample") is owned by International Business Machines 
-            Corporation or one of its subsidiaries ("IBM") and is copyrighted and licensed, not sold. 
-  			
-            The Sample is not part of any standard IBM product. You may use, copy, modify, and distribute 
-            the Sample in any form without payment to IBM, for the purpose of assisting you in the 
+            (c) Copyright IBM Corp. 2007 All rights reserved.
+
+            The following sample of source code ("Sample") is owned by International Business Machines
+            Corporation or one of its subsidiaries ("IBM") and is copyrighted and licensed, not sold.
+
+            The Sample is not part of any standard IBM product. You may use, copy, modify, and distribute
+            the Sample in any form without payment to IBM, for the purpose of assisting you in the
             development of your applications.
-  			
-            The Sample code is provided to you on an "AS IS" basis, without warranty of any kind. 
-  
-            IBM HEREBY EXPRESSLY DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT 
-            LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
-             
-            Some jurisdictions do not allow for the exclusion or limitation of implied warranties, so the 
-            above limitations or exclusions may not apply to you. IBM shall not be liable for any damages 
-            you suffer as a result of using, copying, modifying or distributing the Sample, even if IBM 
-            has been advised of the possibility of such damages.    
-  -->
-	<head>
-		<title>DB2 Health Monitor Sample Application for PHP</title>
-		<link rel="stylesheet" type="text/css" href="../../nav.css"></link>
-	</head>
-	
-	<body style="margin:0px">
-		<table style="width:100%" cellspacing="0px" cellpadding="0px">
-			<tr>
-				<td rowspan="2" style="background-image:url('../../images/DB_nav_tile.gif');width:200px" valign="top"></td> 
-				<td>
-					<table style="width:100%" cellspacing="0" cellpadding="0">
-		    			<tr class="bannerBG">
-			  				<td>
-								<img src="../../images/en_US/im_ban.bmp" alt="IBM Information Management" />
-			  				</td>
-			  				<td style="text-align:right">
-								<img src="../../images/FS_ban_IBMLogo.gif" alt="IBM" />
-			  				</td>
-		 				</tr>
-					</table>
-				</td>
-			</tr>
-  			<tr>
-  				<td class="content">  
-					<div class="content_width">
-						<h1 class="head1">AJAXUpdate Widget Documentation</h1>
-						<br />
-						
-						<table cellspacing="0" cellpadding="0">
-			  				<tr> 
-								<td class="tableText" valign="top">
-									The AJAXUpdate widget was designed in JavaScript and attempts to provide a 
-									simple, reusable mechanism for providing asynchronous updates to any HTML Web-page.
-									<br /><br />
-									Internally, the JavaScript class utilizes the XMLHTTPRequest object (that is a part
-									of the browser or an ActiveXObject) in order to provide asynchronous updates. 
-									To simplify the AJAX process, almost all details are masked internally 
-									within the widget.  The widget user must instantiate the widget and call 
-									its request method while providing two details: the URL from which the data will 
-									be retrieved (that is, the URL that will output text, JavaScript, or XML), and a 
-									handle or pointer to a local JavaScript function that will receive and process the 
-									data.
-									<br /><br />
-									The updating process is simplified and the widget user does 
-									not require any additional knowledge regarding the XMLHTTPRequest object.  
-									After the data at the specified URL becomes available, the internal receive function 
-									of the AJAXUpdate widget will be called followed by the local JavaScript function to
-									which a handle or pointer was provided.
-								</td>
-							</tr>
-						</table>
-						
-						<h1 class="head2green">Look and Feel</h1>
-						<p>
-							Not Applicable - This widget has no visual components to be rendered.
-						</p>
-					
-						<h1 class="head2green">Logical Diagram</h1>
-						<p>
-							Not Applicable - This widget has no dependencies on other widgets or code modules.
-						</p>
-					
-						<h1 class="head2green">Include Mechanism</h1>
-						<p>
-							To use this JavaScript class in a Web-page please add the HTML script tag with the appropriate
-							attributes to the HEAD section of the HTML document.  The path listed assumes 
-							that the file is located in the same directory as the HTML Web-page on which 
-							the widget will be used (although the include can be made in the BODY of the HTML 
-							document it is recommended to place it in the HEAD section to reduce load times).
-						</p>	
+
+            The Sample code is provided to you on an "AS IS" basis, without warranty of any kind.
+
+            IBM HEREBY EXPRESSLY DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT
+            LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+            Some jurisdictions do not allow for the exclusion or limitation of implied warranties, so the
+            above limitations or exclusions may not apply to you. IBM shall not be liable for any damages
+            you suffer as a result of using, copying, modifying or distributing the Sample, even if IBM
+            has been advised of the possibility of such damages.
+-->
+  <head>
+    <title>DB2 Health Monitor Sample Application for PHP</title>
+    <link rel="stylesheet" type="text/css" href="../../nav.css"></link>
+  </head>
+
+  <body style="margin:0px">
+    <table style="width:100%" cellspacing="0px" cellpadding="0px">
+      <tr>
+        <td rowspan="2" style="background-image:url('../../images/DB_nav_tile.gif');width:200px" valign="top"></td>
+        <td>
+          <table style="width:100%" cellspacing="0" cellpadding="0">
+            <tr class="bannerBG">
+              <td>
+                <img src="../../images/en_US/im_ban.bmp" alt="IBM Information Management" />
+              </td>
+              <td style="text-align:right">
+                <img src="../../images/FS_ban_IBMLogo.gif" alt="IBM" />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="content">
+          <div class="content_width">
+            <h1 class="head1">AJAXUpdate Widget Documentation</h1>
+            <br />
+
+            <table cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="tableText" valign="top">
+                  The AJAXUpdate widget was designed in JavaScript and attempts to provide a
+                  simple, reusable mechanism for providing asynchronous updates to any HTML Web-page.
+                  <br /><br />
+                  Internally, the JavaScript class utilizes the XMLHTTPRequest object (that is a part
+                  of the browser or an ActiveXObject) in order to provide asynchronous updates.
+                  To simplify the AJAX process, almost all details are masked internally
+                  within the widget.  The widget user must instantiate the widget and call
+                  its request method while providing two details: the URL from which the data will
+                  be retrieved (that is, the URL that will output text, JavaScript, or XML), and a
+                  handle or pointer to a local JavaScript function that will receive and process the
+                  data.
+                  <br /><br />
+                  The updating process is simplified and the widget user does
+                  not require any additional knowledge regarding the XMLHTTPRequest object.
+                  After the data at the specified URL becomes available, the internal receive function
+                  of the AJAXUpdate widget will be called followed by the local JavaScript function to
+                  which a handle or pointer was provided.
+                </td>
+              </tr>
+            </table>
+
+            <h1 class="head2green">Look and Feel</h1>
+            <p>
+              Not Applicable - This widget has no visual components to be rendered.
+            </p>
+
+            <h1 class="head2green">Logical Diagram</h1>
+            <p>
+              Not Applicable - This widget has no dependencies on other widgets or code modules.
+            </p>
+
+            <h1 class="head2green">Include Mechanism</h1>
+            <p>
+              To use this JavaScript class in a Web-page please add the HTML script tag with the appropriate
+              attributes to the HEAD section of the HTML document.  The path listed assumes
+              that the file is located in the same directory as the HTML Web-page on which
+              the widget will be used (although the include can be made in the BODY of the HTML
+              document it is recommended to place it in the HEAD section to reduce load times).
+            </p>
 <pre style="background-color:lightgreen;">
 &lt;html&gt;
   &lt;head&gt;
     &lt;script type=&ldquo;text/javascript&rdquo; src=&ldquo;./class.ajaxupdate.js&rdquo;&gt;&lt;/script&gt;
   &lt;/head&gt;
 &lt;html&gt;
-</pre>								
-						<h1 class="head2green">Browser Compatibility</h1>
-						<p>
-							This widget has been tested, and is supported on the following browsers:
-						</p>			
-						<ul>
-							<li>Firefox 1.5.x</li>
-							<li>Firefox 2.0.x</li>
-							<li>Internet Explorer 6</li>
-							<li>Internet Explorer 7</li>
-						</ul>						
-						
-						<h1 class="head2green">HTML Structure</h1>
-						<p>
-							Not Applicable - This widget has no visual components to be rendered.
-						</p>
-						
-						<h1 class="head2green">Class Diagram</h1>
-						<img src="./ajaxupdate_class.jpg" alt="AJAXUpdate Class Diagram" />					
-						
-						<h1 class="head2green">Class Documentation</h1>
-						<ul>
-							<li>
-								Attributes:
-								<ul>
-									<li>
-										<a href="#m_xhr_object" class="solo">m_xhr_object</a>,
-										<a href="#m_receive_action" class="solo">m_receive_action</a>,
-										<a href="#m_ready_state" class="solo">m_ready_state</a>,
-										<a href="#m_xml_only" class="solo">m_xml_only</a>
-										
-									</li>
-								</ul>
-							</li>
-							<li>
-								Methods: 
-								<ul>
-									<li>
-										<a href="#AJAXUpdate" class="solo">AJAXUpdate()</a>,
-										<a href="#purgeEvents" class="solo">purgeEvents()</a>,
-										<a href="#getXHR" class="solo">getXHR()</a>,
-										<a href="#getReadyState" class="solo">getReadyState()</a>,										
-										<a href="#receive" class="solo">receive()</a>,
-										<a href="#request" class="solo">request()</a>,
-										<a href="#destruct" class="solo">destruct()</a>
-									</li>
-								</ul>
-							</li>
-						</ul>						
-						
-						
-						<h1 class="head2green">Attributes</h1>
-						<h5 id="m_xhr_object" class="small">m_xhr_object</h5>
-						<p>&nbsp;&nbsp;Holds the XMLHTTPRequest object for performing asynchronous updates</p>
-		
-						<h5 id="m_receive_action" class="small">m_receive_action</h5>
-						<p>&nbsp;&nbsp;Holds a pointer to the JavaScript function that will be executed</p>				
-						
-						<h5 id="m_ready_state" class="small">m_ready_state</h5>
-						<p>&nbsp;&nbsp;Holds a string describing the current state of the data request</p>							
-						
-						<h5 id="m_xml_only" class="small">m_xml_only</h5>
-						<p>&nbsp;&nbsp;Determines if data other than Content-Type: text/xml should be accepted</p>						
-						
-						<h1 class="head2green">Methods</h1>
-						<h5 id="AJAXUpdate" class="small">AJAXUpdate ()</h5>
-						<p>&nbsp;&nbsp;Construct an AJAXUpdate widget for performing asynchronous updates<br /><br />			
-		  				   &nbsp;&nbsp;<b>Notes: </b><br />
-		   				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AJAXUpdate Constructor
-						</p>	
-						
-						<h5 id="purgeEvents" class="small">purgeEvents ()</h5>
-						<p>&nbsp;&nbsp;Frees all memory associated with embedded AJAXUpdate events<br /><br />
-		   				   &nbsp;&nbsp;<b>Returns: </b><br />
-		   				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void		
-						</p>						
-		
-						<h5 id="getXHR" class="small">getXHR ()</h5>
-						<p>&nbsp;&nbsp;Returns a new XMLHTTPRequest object (XHR)<br /><br />
-		   				   &nbsp;&nbsp;<b>Returns: </b><br />
-		   				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XMLHTTPRequest object
-						</p>
-				
-						<h5 id="getReadyState" class="small">getReadyState ()</h5>
-						<p>&nbsp;&nbsp;Obtains a string representation of the data request state<br /><br />
-		   				   &nbsp;&nbsp;<b>Returns: </b><br />
-		   				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String - (&quot;Loading...&quot; or &quot;Update Received&quot;)
-						</p>								
-		
-						<h5 id="receive" class="small">receive ()</h5>
-						<p>&nbsp;&nbsp;Receives the data from the asynchronous XMLHTTPRequest and calls the specified 
-						   JavaScript function<br /><br />
-		   				   &nbsp;&nbsp;<b>Returns: </b><br />
-		   				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void
-						</p>										
-		
-						<h5 id="request" class="small">request (data_url, action_function, xml_only)</h5>
-						<p>&nbsp;&nbsp;Performs an HTTP GET Request to data_url, and assigns the XMLHTTP ready-state handler to the receive()<br />
-						   &nbsp;&nbsp;method<br /><br />
-						   &nbsp;&nbsp;<b>Parameters: </b><br />
-						   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_url - a string of the URL from which the data will be received<br />	
-						   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action_function - a pointer to a JavaScript function that will be called upon data retrieval; this function must 
-						   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accept one parameter (i.e. the data)<br />	
-						   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xml_only - Boolean flag that instructs the AJAXUpdater to only pass data of Content-Type: text/xml or pass 
-						   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;any datatype to the action_function<br />	   	   
-						   &nbsp;&nbsp;<b>Returns: </b><br />
-						   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean
-						</p>				
-						
-						<h5 id="destruct" class="small">destruct ()</h5>
-						<p>&nbsp;&nbsp;Free all memory associated with the AJAXUpdate object<br /><br />	   
-		   				   &nbsp;&nbsp;<b>Returns: </b><br />
-		   				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void<br />
-		   				   &nbsp;&nbsp;<b>Notes: </b><br />
-		   				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This must be manually called before unloading the 
-		   				   									   Web-page to prevent memory leaks	   
-						</p>						
-						
-						<h1 class="head2green">Example Usage</h1>
-						<p>
-							The examples to follow are designed to serve as a simple walkthrough on how you would add 
-							the AJAXUpdate widget to a Web-page.  Each example is designed to build on those before it, 
-							and therefore, the final example will show the overall picture regarding instantiating and 
-							updating data with the AJAXUpdate widget correctly.  While it is not necessary to follow 
-							each step exactly, this will provide a general idea on how it works.
-		   					<br /><br />
-		   					This example will use an arbitary string for the URL and it will be assumed that the 
-		   					data returned from this source will be entirely text-based.  The sample also assumes
-		   					that asynchronous update requests will be performed by a user clicking on an HTML button control.
-						</p>	
-						
-						<h1 class="head2green">Example 1 - Hooking it up</h1>
-						<p>
-							The AJAXUpdate is designed to request and retrieve data not display data.  Therefore, an HTML hook or 
-							placeholder will be created to hold the data, but not the widget (if another widget
-							was used to hold the data, such as a ProgressBar, then a hook should be created for that 
-							widget not for the raw data).
-							
-							<br /><br />
-		  			 		&quot;div&quot; tags serve as great hooks, since they can be placed within almost any 
-		  			 		type of tag and similarly, can contain almost any tag.
-						</p>
+</pre>
+            <h1 class="head2green">Browser Compatibility</h1>
+            <p>
+              This widget has been tested, and is supported on the following browsers:
+            </p>
+            <ul>
+              <li>Firefox 1.5.x</li>
+              <li>Firefox 2.0.x</li>
+              <li>Internet Explorer 6</li>
+              <li>Internet Explorer 7</li>
+            </ul>
+
+            <h1 class="head2green">HTML Structure</h1>
+            <p>
+              Not Applicable - This widget has no visual components to be rendered.
+            </p>
+
+            <h1 class="head2green">Class Diagram</h1>
+            <img src="./ajaxupdate_class.jpg" alt="AJAXUpdate Class Diagram" />
+
+            <h1 class="head2green">Class Documentation</h1>
+            <ul>
+              <li>
+                Attributes:
+                <ul>
+                  <li>
+                    <a href="#m_xhr_object" class="solo">m_xhr_object</a>,
+                    <a href="#m_receive_action" class="solo">m_receive_action</a>,
+                    <a href="#m_ready_state" class="solo">m_ready_state</a>,
+                    <a href="#m_xml_only" class="solo">m_xml_only</a>
+
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Methods:
+                <ul>
+                  <li>
+                    <a href="#AJAXUpdate" class="solo">AJAXUpdate()</a>,
+                    <a href="#purgeEvents" class="solo">purgeEvents()</a>,
+                    <a href="#getXHR" class="solo">getXHR()</a>,
+                    <a href="#getReadyState" class="solo">getReadyState()</a>,
+                    <a href="#receive" class="solo">receive()</a>,
+                    <a href="#request" class="solo">request()</a>,
+                    <a href="#destruct" class="solo">destruct()</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <h1 class="head2green">Attributes</h1>
+            <h5 id="m_xhr_object" class="small">m_xhr_object</h5>
+            <p>&nbsp;&nbsp;Holds the XMLHTTPRequest object for performing asynchronous updates</p>
+
+            <h5 id="m_receive_action" class="small">m_receive_action</h5>
+            <p>&nbsp;&nbsp;Holds a pointer to the JavaScript function that will be executed</p>
+
+            <h5 id="m_ready_state" class="small">m_ready_state</h5>
+            <p>&nbsp;&nbsp;Holds a string describing the current state of the data request</p>
+
+            <h5 id="m_xml_only" class="small">m_xml_only</h5>
+            <p>&nbsp;&nbsp;Determines if data other than Content-Type: text/xml should be accepted</p>
+
+            <h1 class="head2green">Methods</h1>
+            <h5 id="AJAXUpdate" class="small">AJAXUpdate ()</h5>
+            <p>&nbsp;&nbsp;Construct an AJAXUpdate widget for performing asynchronous updates<br /><br />
+                 &nbsp;&nbsp;<b>Notes: </b><br />
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AJAXUpdate Constructor
+            </p>
+
+            <h5 id="purgeEvents" class="small">purgeEvents ()</h5>
+            <p>&nbsp;&nbsp;Frees all memory associated with embedded AJAXUpdate events<br /><br />
+                 &nbsp;&nbsp;<b>Returns: </b><br />
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void
+            </p>
+
+            <h5 id="getXHR" class="small">getXHR ()</h5>
+            <p>&nbsp;&nbsp;Returns a new XMLHTTPRequest object (XHR)<br /><br />
+                 &nbsp;&nbsp;<b>Returns: </b><br />
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XMLHTTPRequest object
+            </p>
+
+            <h5 id="getReadyState" class="small">getReadyState ()</h5>
+            <p>&nbsp;&nbsp;Obtains a string representation of the data request state<br /><br />
+                 &nbsp;&nbsp;<b>Returns: </b><br />
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String - (&quot;Loading...&quot; or &quot;Update Received&quot;)
+            </p>
+
+            <h5 id="receive" class="small">receive ()</h5>
+            <p>&nbsp;&nbsp;Receives the data from the asynchronous XMLHTTPRequest and calls the specified
+               JavaScript function<br /><br />
+                 &nbsp;&nbsp;<b>Returns: </b><br />
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void
+            </p>
+
+            <h5 id="request" class="small">request (data_url, action_function, xml_only)</h5>
+            <p>&nbsp;&nbsp;Performs an HTTP GET Request to data_url, and assigns the XMLHTTP ready-state handler to the receive()<br />
+               &nbsp;&nbsp;method<br /><br />
+               &nbsp;&nbsp;<b>Parameters: </b><br />
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_url - a string of the URL from which the data will be received<br />
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action_function - a pointer to a JavaScript function that will be called upon data retrieval; this function must
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accept one parameter (i.e. the data)<br />
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xml_only - Boolean flag that instructs the AJAXUpdater to only pass data of Content-Type: text/xml or pass
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;any datatype to the action_function<br />
+               &nbsp;&nbsp;<b>Returns: </b><br />
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean
+            </p>
+
+            <h5 id="destruct" class="small">destruct ()</h5>
+            <p>&nbsp;&nbsp;Free all memory associated with the AJAXUpdate object<br /><br />
+                 &nbsp;&nbsp;<b>Returns: </b><br />
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void<br />
+                 &nbsp;&nbsp;<b>Notes: </b><br />
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This must be manually called before unloading the
+                                     Web-page to prevent memory leaks
+            </p>
+
+            <h1 class="head2green">Example Usage</h1>
+            <p>
+              The examples to follow are designed to serve as a simple walkthrough on how you would add
+              the AJAXUpdate widget to a Web-page.  Each example is designed to build on those before it,
+              and therefore, the final example will show the overall picture regarding instantiating and
+              updating data with the AJAXUpdate widget correctly.  While it is not necessary to follow
+              each step exactly, this will provide a general idea on how it works.
+                <br /><br />
+                This example will use an arbitary string for the URL and it will be assumed that the
+                data returned from this source will be entirely text-based.  The sample also assumes
+                that asynchronous update requests will be performed by a user clicking on an HTML button control.
+            </p>
+
+            <h1 class="head2green">Example 1 - Hooking it up</h1>
+            <p>
+              The AJAXUpdate is designed to request and retrieve data not display data.  Therefore, an HTML hook or
+              placeholder will be created to hold the data, but not the widget (if another widget
+              was used to hold the data, such as a ProgressBar, then a hook should be created for that
+              widget not for the raw data).
+
+              <br /><br />
+                &quot;div&quot; tags serve as great hooks, since they can be placed within almost any
+                type of tag and similarly, can contain almost any tag.
+            </p>
 <pre style="background-color:lightgreen; width:600px;">
 &lt;html&gt;
   &lt;head&gt;
@@ -269,20 +268,20 @@
     &lt;div id=&ldquo;data_hook&rdquo;&gt;&lt;/div&gt;
   &lt;/body&gt;
 &lt;html&gt;
-</pre>			
-						<h1 class="head2green">Example 2 - Creating the AJAXUpdate Object</h1>
-						<p>
-							To create the AJAXUpdate widget, as in other object-oriented programming languages, 
-							the constructor must be called along with the use of the keyword <b>new</b>.
-						</p>	
+</pre>
+            <h1 class="head2green">Example 2 - Creating the AJAXUpdate Object</h1>
+            <p>
+              To create the AJAXUpdate widget, as in other object-oriented programming languages,
+              the constructor must be called along with the use of the keyword <b>new</b>.
+            </p>
 <pre style="background-color:lightgreen; width:600px;">
 &lt;html&gt;
   &lt;head&gt;
     &lt;script type=&ldquo;text/javascript&rdquo; src=&ldquo;./class.ajaxupdate.js&rdquo;&gt;&lt;/script&gt;
     &lt;script type=&ldquo;text/javascript&rdquo;&gt;
-    	
+
         var widget = null;
-    
+
         function init()
         {
             widget = new AJAXUpdate();
@@ -293,37 +292,37 @@
     &lt;div id=&ldquo;data_hook&rdquo;&gt;&lt;/div&gt;
   &lt;/body&gt;
 &lt;html&gt;
-</pre>		
+</pre>
 
-						<h1 class="head2green">Example 3 - Creating the Update Button and Function Shells</h1>
-						<p>
-							To provide a mechanism with which the data can be updated or refreshed from the URL the 
-							following items will be created: an HTML button, an update() function in order to make the 
-							request, and a process() function which will receive and display the data. Only the function
-		   					shells will be created here and will be attached to an HTML button.  The examples to follow 
-		   					will describe the data retrieval and request processes.
-						</p>
+            <h1 class="head2green">Example 3 - Creating the Update Button and Function Shells</h1>
+            <p>
+              To provide a mechanism with which the data can be updated or refreshed from the URL the
+              following items will be created: an HTML button, an update() function in order to make the
+              request, and a process() function which will receive and display the data. Only the function
+                shells will be created here and will be attached to an HTML button.  The examples to follow
+                will describe the data retrieval and request processes.
+            </p>
 <pre style="background-color:lightgreen; width:600px;">
 &lt;html&gt;
   &lt;head&gt;
     &lt;script type=&ldquo;text/javascript&rdquo; src=&ldquo;./class.ajaxupdate.js&rdquo;&gt;&lt;/script&gt;
     &lt;script type=&ldquo;text/javascript&rdquo;&gt;
-    	
+
         var widget = null;
-    
+
         function init()
         {
             widget = new AJAXUpdate();
         }
-        
+
         function update()
         {
-    
+
         }
-        
+
         function process(data)
         {
-	        
+
         }
     &lt;/script&gt;
   &lt;/head&gt;
@@ -334,38 +333,38 @@
     &lt;/div&gt;
   &lt;/body&gt;
 &lt;html&gt;
-</pre>	
+</pre>
 
-						<h1 class="head2green">Example 4 - Requesting Data</h1>
-						<p>
-							Now that the update() function is bound to the HTML button on the &quot;click&quot; event it is 
-							necessary to incorporate the AJAXUpdate widget into the process.  On update, the widget 
-							will request data from a specified URL, will attach the process() function as the 
-							handler for data retrieval, and will only accept the text/xml datatype.  
-							JavaScript function pointers are created by naming the function without brackets, 
-							parameters, or surrounding quotes (as demonstrated below).
-						</p>	
+            <h1 class="head2green">Example 4 - Requesting Data</h1>
+            <p>
+              Now that the update() function is bound to the HTML button on the &quot;click&quot; event it is
+              necessary to incorporate the AJAXUpdate widget into the process.  On update, the widget
+              will request data from a specified URL, will attach the process() function as the
+              handler for data retrieval, and will only accept the text/xml datatype.
+              JavaScript function pointers are created by naming the function without brackets,
+              parameters, or surrounding quotes (as demonstrated below).
+            </p>
 <pre style="background-color:lightgreen; width:600px;">
 &lt;html&gt;
   &lt;head&gt;
     &lt;script type=&ldquo;text/javascript&rdquo; src=&ldquo;./class.ajaxupdate.js&rdquo;&gt;&lt;/script&gt;
     &lt;script type=&ldquo;text/javascript&rdquo;&gt;
-    	
+
         var widget = null;
-    
+
         function init()
         {
             widget = new AJAXUpdate();
         }
-        
+
         function update()
-        { 
-            widget.request('http://example.com/data.php', process, true);    
+        {
+            widget.request('http://example.com/data.php', process, true);
         }
-        
+
         function process(data)
         {
-	        
+
         }
     &lt;/script&gt;
   &lt;/head&gt;
@@ -376,40 +375,40 @@
     &lt;/div&gt;
   &lt;/body&gt;
 &lt;html&gt;
-</pre>	
+</pre>
 
-						<h1 class="head2green">Example 5 - Displaying Data upon Retrieval</h1>
-						<p>
-							The final step is to have the data display after it as been received.  As can be seen 
-							from the example above, nothing will display when the button is clicked and the data has 
-							been received.  However, the process() function will be called and passed the data once it 
-							is ready.  Therefore, the data only needs to be formatted (optional), and placed into the 
-							hook.
-						</p>
+            <h1 class="head2green">Example 5 - Displaying Data upon Retrieval</h1>
+            <p>
+              The final step is to have the data display after it as been received.  As can be seen
+              from the example above, nothing will display when the button is clicked and the data has
+              been received.  However, the process() function will be called and passed the data once it
+              is ready.  Therefore, the data only needs to be formatted (optional), and placed into the
+              hook.
+            </p>
 <pre style="background-color:lightgreen; width:600px;">
 &lt;html&gt;
   &lt;head&gt;
     &lt;script type=&ldquo;text/javascript&rdquo; src=&ldquo;./class.ajaxupdate.js&rdquo;&gt;&lt;/script&gt;
     &lt;script type=&ldquo;text/javascript&rdquo;&gt;
-    	
+
         var widget = null;
-    
+
         function init()
         {
             widget = new AJAXUpdate();
         }
-        
+
         function update()
-        { 
-            widget.request('http://example.com/data.php', process, true);    
+        {
+            widget.request('http://example.com/data.php', process, true);
         }
-        
+
         function process(data)
         {
             var html = '&lt;p style=&ldquo;text-align:center&rdquo;&gt;';
             html += data;
             html += '&lt;/p&gt;';
-            
+
             var hook = document.getElementById('data_hook');
             hook.innerHTML = html;
         }
@@ -422,45 +421,45 @@
     &lt;/div&gt;
   &lt;/body&gt;
 &lt;html&gt;
-</pre>	
+</pre>
 
-						<h1 class="head2green">Example 6 - Cleaning up Memory</h1>
-						<p>
-							To ensure that all memory associated with the widget is freed upon closing the Web-page 
-							or browser, it is necessary to call the destruct() method.  While most programming languages
-							have a destructor that is implicitly called, here, a explicit function call must be made.  
-						</p>
+            <h1 class="head2green">Example 6 - Cleaning up Memory</h1>
+            <p>
+              To ensure that all memory associated with the widget is freed upon closing the Web-page
+              or browser, it is necessary to call the destruct() method.  While most programming languages
+              have a destructor that is implicitly called, here, a explicit function call must be made.
+            </p>
 <pre style="background-color:lightgreen; width:600px;">
 &lt;html&gt;
   &lt;head&gt;
     &lt;script type=&ldquo;text/javascript&rdquo; src=&ldquo;./class.ajaxupdate.js&rdquo;&gt;&lt;/script&gt;
     &lt;script type=&ldquo;text/javascript&rdquo;&gt;
-    	
+
         var widget = null;
-    
+
         function init()
         {
             widget = new AJAXUpdate();
         }
-        
+
         function update()
-        { 
-            widget.request('http://example.com/data.php', process, true);    
+        {
+            widget.request('http://example.com/data.php', process, true);
         }
-        
+
         function process(data)
         {
             var html = '&lt;p style=&ldquo;text-align:center&rdquo;&gt;';
             html += data;
             html += '&lt;/p&gt;';
-            
+
             var hook = document.getElementById('data_hook');
             hook.innerHTML = html;
         }
-        
+
         function destroy()
         {
-            widget.destruct();    
+            widget.destruct();
         }
     &lt;/script&gt;
   &lt;/head&gt;
@@ -471,104 +470,104 @@
     &lt;/div&gt;
   &lt;/body&gt;
 &lt;html&gt;
-</pre>						
+</pre>
 
-						<h1 class="head2green">Special Notes</h1>
-						<ul>
-							<li>
-								This widget can be used with other widgets in order to update them asynchronously.
-							</li>
-							<li>
-								The function pointer passed to request(data_url, action_function, xml_only) 
-								(that is, the action_function) must accept a single parameter:
-								the data (in its prototype and implementation).
-							</li>
-							<li>
-								The browser used must have XMLHTTPRequest object support.
-							</li>
-							<li>
-								Remember to call the destruct() method to free memory before the page is unloaded.
-							</li>
-						</ul>
-		
-						<h1 class="head2green">Lessons Learned</h1>
-						<p>
-							The main goal of this widget was to make it as easy as possible to use the
-							XMLHTTPRequest object in any browser without having to expose unecessary details.
-							All that a user of the AJAXUpdate widget should have to understand is that a request
-							will be sent to the desired URL to fetch the data and once that data is ready, it
-							will automatically be passed to JavaScript function that was specified.
-							If the &quot;XML only&quot; option is specified, the widget will check to see if the 
-							data received has a Content-Type: text/xml. If the criteria is met, only then will
-							the data be returned as is.
-							
-							<br /><br />
-							When designing an object that uses many function pointers, it is imperative that you
-							watch for memory leaks.  In this particular case, there are two places in which memory
-							leaks can occur: the receive function where the XMLHTTPRequest object points
-							to &quot;onreadystatechange&quot;, and the references to the function stored within private
-							variables of the object.
-						</p>
-						
-    					<p class="cp">
-    					<br />
-    						&copy; Copyright IBM Corp. 2007. All rights reserved.
-							IBM&reg;, the IBM logo, DB2&reg;, AIX&reg;, and pureXML&trade; are 
-							registered trademarks of International Business Machines Corporation in the 
-							United States, other countries, or both.
+            <h1 class="head2green">Special Notes</h1>
+            <ul>
+              <li>
+                This widget can be used with other widgets in order to update them asynchronously.
+              </li>
+              <li>
+                The function pointer passed to request(data_url, action_function, xml_only)
+                (that is, the action_function) must accept a single parameter:
+                the data (in its prototype and implementation).
+              </li>
+              <li>
+                The browser used must have XMLHTTPRequest object support.
+              </li>
+              <li>
+                Remember to call the destruct() method to free memory before the page is unloaded.
+              </li>
+            </ul>
 
-							Zend and Zend Core are registered trademarks of Zend Technologies Limited,
-							in the United States, other countries, or both.
-							
-							Mozilla&reg; and Firefox&reg; are registered trademarks of the Mozilla Foundation in the
-							United States and other countries.
-							
-							Microsoft, Windows, Windows NT, Internet Explorer&reg;, and the Windows logo are 
-							trademarks of Microsoft Corporation in the United States, other countries, or
-							both.
-							
-							Linux is a registered trademark of Linus Torvalds in the United
-							States, other countries, or both.
-							
-							Other company, product, or service names
-							may be trademarks or service marks of others.
-						</p>							
-					</div>					
-				</td>
-			</tr>
-		</table>
-	
-		<div class="navigation">
-			<img src="../../images/FS_ban_mosaic.gif" alt="Data Management Mosiac imagery" />		
-    		<div class="container"> 
-     			<div class="left-nav"> 
-       				<div class="top-level"> 
-        				<a href="../../index.html">Welcome</a> 
-        				<a href="../../requirements.html">Requirements</a>
-        				<a href="../../setup.html">Setup</a> 
-          					<div class="second-level"> 
-    							<a href="../../setup_database.html">Creating the Sample Database</a> 
-		        				<a href="../../setup_php.html">Setting up PHP</a> 
-          						<a href="../../setup_sample.html">Setting up the Sample</a> 
-         						<a href="../../setup_testdb.html">Testing the Connection</a> 
-         						<a href="../../setup_testservice.html">Testing the Service</a>        			           	          	
- 		   					</div>		
-		       			<a href="../../using.html">Using</a>
-      	        		<div class="second-level"> 
-	      	        		<a href="../../../SOADemo/index.html">DB2 Health Monitor Sample</a>         	          	
-		       			</div>	 		   					
-          				<a href="./architecture.html">Architecture</a> 
-						<div class="second-level">           	
-							<a href="../../architecture_directory.html">Directory Structure</a>
-		          			<a href="../../architecture_files.html">File Breakdown</a> 
-		          			<a href="../../architecture_deploy.html">Deployment Models</a>
-        		  			<a href="../../architecture_errors.html">Error Handling</a> 
-        		  			<a class="active" href="../../architecture_widgets.html">JavaScript Widgets</a>          	
-						</div> 			   		  	
-          				<a href="../../lessons.html">Lessons Learned</a>       			
-       				</div>
-				</div>
-			</div>
-		</div>	
-	</body>
+            <h1 class="head2green">Lessons Learned</h1>
+            <p>
+              The main goal of this widget was to make it as easy as possible to use the
+              XMLHTTPRequest object in any browser without having to expose unecessary details.
+              All that a user of the AJAXUpdate widget should have to understand is that a request
+              will be sent to the desired URL to fetch the data and once that data is ready, it
+              will automatically be passed to JavaScript function that was specified.
+              If the &quot;XML only&quot; option is specified, the widget will check to see if the
+              data received has a Content-Type: text/xml. If the criteria is met, only then will
+              the data be returned as is.
+
+              <br /><br />
+              When designing an object that uses many function pointers, it is imperative that you
+              watch for memory leaks.  In this particular case, there are two places in which memory
+              leaks can occur: the receive function where the XMLHTTPRequest object points
+              to &quot;onreadystatechange&quot;, and the references to the function stored within private
+              variables of the object.
+            </p>
+
+            <p class="cp">
+              <br />
+              &copy; Copyright IBM Corp. 2007. All rights reserved.
+              IBM&reg;, the IBM logo, DB2&reg;, AIX&reg;, and pureXML&trade; are
+              registered trademarks of International Business Machines Corporation in the
+              United States, other countries, or both.
+
+              Zend and Zend Core are registered trademarks of Zend Technologies Limited,
+              in the United States, other countries, or both.
+
+              Mozilla&reg; and Firefox&reg; are registered trademarks of the Mozilla Foundation in the
+              United States and other countries.
+
+              Microsoft, Windows, Windows NT, Internet Explorer&reg;, and the Windows logo are
+              trademarks of Microsoft Corporation in the United States, other countries, or
+              both.
+
+              Linux is a registered trademark of Linus Torvalds in the United
+              States, other countries, or both.
+
+              Other company, product, or service names
+              may be trademarks or service marks of others.
+            </p>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="navigation">
+      <img src="../../images/FS_ban_mosaic.gif" alt="Data Management Mosiac imagery" />
+        <div class="container">
+          <div class="left-nav">
+            <div class="top-level">
+              <a href="../../index.html">Welcome</a>
+              <a href="../../requirements.html">Requirements</a>
+              <a href="../../setup.html">Setup</a>
+              <div class="second-level">
+                <a href="../../setup_database.html">Creating the Sample Database</a>
+                <a href="../../setup_php.html">Setting up PHP</a>
+                <a href="../../setup_sample.html">Setting up the Sample</a>
+                <a href="../../setup_testdb.html">Testing the Connection</a>
+                <a href="../../setup_testservice.html">Testing the Service</a>
+              </div>
+              <a href="../../using.html">Using</a>
+                <div class="second-level">
+                  <a href="../../../SOADemo/index.html">DB2 Health Monitor Sample</a>
+                </div>
+              <a href="./architecture.html">Architecture</a>
+            <div class="second-level">
+              <a href="../../architecture_directory.html">Directory Structure</a>
+              <a href="../../architecture_files.html">File Breakdown</a>
+              <a href="../../architecture_deploy.html">Deployment Models</a>
+              <a href="../../architecture_errors.html">Error Handling</a>
+              <a class="active" href="../../architecture_widgets.html">JavaScript Widgets</a>
+            </div>
+            <a href="../../lessons.html">Lessons Learned</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
