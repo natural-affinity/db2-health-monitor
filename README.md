@@ -2,24 +2,25 @@ DB2 Health Monitor Sample Application
 =====================================
 This is a custom-built AJAX health monitoring web-console that I developed while
 working at IBM in 2007 which was bundled with the publicly released DB2 Starter
-Toolkit for PHP.  This sample application also includes the
+Toolkit for PHP.  
+
+This sample application also includes the
 [rojo-ajax-toolkit](https://github.com/natural-affinity/rojo-ajax-toolkit) which
 was one of the very first AJAX toolkits that was developed and released at a
 time when almost no commerical frameworks were available, or were still in their
 infancy (e.g. dojo).  
 
-The db2-health-monitor sample applicaton was considered cutting-edge for its time.  
-To provide some historical context, it was released just as native XML databases
-were being introduced, single-page AJAX web-applications were just becoming popular,
-and just when the IT movement towards web services and SOA was really starting
-to take off (e.g. PHP 5 did not have a native SOAP extension when this project
+Moreover, the db2-health-monitor sample was released at a time 
+when native XML databases were just being introduced, single-page AJAX web-apps were 
+just becoming popular, and just when the IT movement towards SOA/services was really 
+starting to take off (e.g. PHP 5 did not have a native SOAP extension when this project
 initially began).  
 
 DeveloperWorks Articles
 -----------------------
 Several articles were released as complementary material to this sample application:
-* [One Paradigm. Infinite Possibilities](http://www.ibm.com/developerworks/data/library/techarticle/dm-0712tejpar)
-* [pureXML or DOM? You Decide.](http://www.ibm.com/developerworks/data/library/techarticle/dm-0801tejpar)
+* [Building the DB2 Health Monitor Sample: Part 1](http://www.ibm.com/developerworks/data/library/techarticle/dm-0712tejpar)
+* [Building the DB2 Health Monitor Sample: Part 2](http://www.ibm.com/developerworks/data/library/techarticle/dm-0801tejpar)
 
 
 Disclaimer
