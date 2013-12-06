@@ -1,4 +1,4 @@
-/* 
+/*
  * @project IBM Template - Cascading Style Sheet
  * @author IBM, Rizwan Tejpar <rtejpar@ca.ibm.com>
  * @version 1.0
@@ -6,318 +6,313 @@
  * @verified 07/22/07 (W3C Validator)
  * @browser IE6, IE7, Firefox 1.5, Firefox 2
  * @disclaimer
- *          Any references or links in this document to non-IBM Web sites are provided for convenience 
- *          only and do not in any manner serve as an endorsement of those non-IBM Web sites or their 
- *          owners. The materials at the non-IBM Web sites are not owned or licensed by IBM and use of 
- *          those non-IBM Web sites is at your own risk. IBM makes no representations, warranties, or 
- *          other commitments whatsoever about any non-IBM Web sites or third-party resources that may 
- *          be referenced, accessible from, or linked from this document. In addition, IBM is not a 
- *          party to or responsible for any transactions you may enter into with third parties, even if 
- *          you learn of such parties (or use a link to such parties) from this document. You are 
- *          responsible for compliance with any license terms or other obligations for use of the 
- *          non-IBM Web sites in respect of your use of those non-IBM Web sites. You acknowledge and 
- *          agree that IBM is not responsible for the availability of such external sites or resources, 
- *          and is not responsible or liable for any content, services, products, or other materials on 
- *          or available from those sites or resources. 
+ *          Any references or links in this document to non-IBM Web sites are provided for convenience
+ *          only and do not in any manner serve as an endorsement of those non-IBM Web sites or their
+ *          owners. The materials at the non-IBM Web sites are not owned or licensed by IBM and use of
+ *          those non-IBM Web sites is at your own risk. IBM makes no representations, warranties, or
+ *          other commitments whatsoever about any non-IBM Web sites or third-party resources that may
+ *          be referenced, accessible from, or linked from this document. In addition, IBM is not a
+ *          party to or responsible for any transactions you may enter into with third parties, even if
+ *          you learn of such parties (or use a link to such parties) from this document. You are
+ *          responsible for compliance with any license terms or other obligations for use of the
+ *          non-IBM Web sites in respect of your use of those non-IBM Web sites. You acknowledge and
+ *          agree that IBM is not responsible for the availability of such external sites or resources,
+ *          and is not responsible or liable for any content, services, products, or other materials on
+ *          or available from those sites or resources.
  * @disclaimer
- *          (c) Copyright IBM Corp. 2007 All rights reserved. 
- *			
- *          The following sample of source code ("Sample") is owned by International Business Machines 
- *          Corporation or one of its subsidiaries ("IBM") and is copyrighted and licensed, not sold. 
- *			
- *          The Sample is not part of any standard IBM product. You may use, copy, modify, and distribute 
- *          the Sample in any form without payment to IBM, for the purpose of assisting you in the 
- *          development of your applications.
- *			
- *          The Sample code is provided to you on an "AS IS" basis, without warranty of any kind. 
+ *          (c) Copyright IBM Corp. 2007 All rights reserved.
  *
- *          IBM HEREBY EXPRESSLY DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT 
- *          LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
- *           
- *          Some jurisdictions do not allow for the exclusion or limitation of implied warranties, so the 
- *          above limitations or exclusions may not apply to you. IBM shall not be liable for any damages 
- *          you suffer as a result of using, copying, modifying or distributing the Sample, even if IBM 
- *          has been advised of the possibility of such damages. 
+ *          The following sample of source code ("Sample") is owned by International Business Machines
+ *          Corporation or one of its subsidiaries ("IBM") and is copyrighted and licensed, not sold.
+ *
+ *          The Sample is not part of any standard IBM product. You may use, copy, modify, and distribute
+ *          the Sample in any form without payment to IBM, for the purpose of assisting you in the
+ *          development of your applications.
+ *
+ *          The Sample code is provided to you on an "AS IS" basis, without warranty of any kind.
+ *
+ *          IBM HEREBY EXPRESSLY DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT
+ *          LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ *          Some jurisdictions do not allow for the exclusion or limitation of implied warranties, so the
+ *          above limitations or exclusions may not apply to you. IBM shall not be liable for any damages
+ *          you suffer as a result of using, copying, modifying or distributing the Sample, even if IBM
+ *          has been advised of the possibility of such damages.
  */
 
 /* Table specific definition above body text to avoid inheritance issues */
-html, body
-{
-	height:100%;
+html, body {
+  height: 100%;
 }
 
-p.cp
-{
-	font-size:10px;	
+p.cp {
+  font-size:10px; 
 }
 
-h5.small
-{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	font-style: normal;
-	color:#A52A2A;
-	text-decoration:underline;
+h5.small {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  color: #A52A2A;
+  text-decoration: underline;
 }
 
-i.small
-{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	font-style: normal;
-	color:#A52A2A;
+i.small {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  color: #A52A2A;
 }
 
-td.search_text 
-{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	color: #5A595A;	
+td.search_text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  color: #5A595A;
 }
+
 td.linkcolor {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	font-weight: bold;
-	color: #595959;	
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  color: #595959;
 }
+
 td.imageInText_placement {
-	vertical-align: top;
+  vertical-align: top;
 }
 
 body, td.tableText {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
 }
 
 td.historyText {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	background-color: #E5ECF9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  background-color: #E5ECF9;
 }
 
 td.footerText {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	background-color: #E5ECF9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  background-color: #E5ECF9;
 }
 
-.content 
-{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	padding-top: 10px;
-	padding-left: 25px;
+.content {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  padding-top: 10px;
+  padding-left: 25px;
 }
 
-.content_width 
-{
-	width: 600px;
+.content_width {
+  width: 600px;
 }
-
 
 /* Banner definitions */
 .bannerBG {
-background-image: url(images/FS_ban_tile.gif);
+  background-image: url(images/FS_ban_tile.gif);
 }
 
 .searchbarBG {
-background-image: url(images/FS_ban_search_BG.gif);
+  background-image: url(images/FS_ban_search_BG.gif);
 }
 
-.searchform { 
- font-size: 12px;
- background-color: #FFFFFF; 
- border: 1px solid #828282;
- height: 19px;
+.searchform {
+  font-size: 12px;
+  background-color: #FFFFFF;
+  border: 1px solid #828282;
+  height: 19px;
 }
 
 /* List, Paragraph and content area definitions  */
-ul,ol {
-	display: block;
-	margin-top: 0px;
+ul, ol {
+  display: block;
+  margin-top: 0px;
 }
 
 li {
-	margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 p {
-	display: block;
-	margin-top: 5px;
-	margin-right: 0px;
-	margin-bottom: 16px;
-	margin-left: 0px;
+  display: block;
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-bottom: 16px;
+  margin-left: 0px;
 }
 
 p.small {
-	display: block;
-	margin-top: 5px;
-	margin-bottom: 5px;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /* Headings Definitions */
 span.head1black {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14pt;
-	font-style: normal;
-	font-weight: bolder;
-	color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14pt;
+  font-style: normal;
+  font-weight: bolder;
+  color: #000000;
 }
 
 .head1 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14pt;
-	font-style: normal;
-	font-weight: bolder;
-	color: #2F751E;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-color:#ADADAD;
-	margin-bottom:0px;
-	padding-bottom:0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14pt;
+  font-style: normal;
+  font-weight: bolder;
+  color: #2F751E;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ADADAD;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
-div.edition
-{
-	color: blue;
-	font-size:10px;	
+div.edition {
+  color: blue;
+  font-size:10px;
 }
 
 .head2green {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12pt;
-	font-style: normal;
-	font-weight: bold;
-	color: #2F751E;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  font-style: normal;
+  font-weight: bold;
+  color: #2F751E;
 }
 
 .head2black {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12pt;
-	font-style: normal;
-	font-weight: bold;
-	color: #494949;
-	text-align: left;
-	border-bottom-width: 1px;
-	border-top-style: none;
-	border-right-style: none;
-	border-bottom-style: solid;
-	border-left-style: none;
-	border-bottom-color: #ADADAD;
-	width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  font-style: normal;
+  font-weight: bold;
+  color: #494949;
+  text-align: left;
+  border-bottom-width: 1px;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: none;
+  border-bottom-color: #ADADAD;
+  width: 100%;
 }
 
 .bold {
-	font-weight: bold;
-
+  font-weight: bold;
 }
 
 /* Left navigation definitions */
-.navigation	{
-	position:absolute;
-	top:0px;
-	left:0px;
-	padding:0px;
-	margin:0px;
-	width:200px;
-	height:100%;
-	background-image:url('./images/DB_nav_tile.gif');
+.navigation {
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  padding: 0px;
+  margin: 0px;
+  width: 200px;
+  height: 100%;
+  background-image:url('./images/DB_nav_tile.gif');
 }
 
 .container {
-	background-color: #a3b9a3;
-	padding-top: 2px;
-	padding-right: 0px;
-	padding-bottom: 2px;
-	padding-left: 0px;
-	margin-top: 18px;
+  background-color: #a3b9a3;
+  padding-top: 2px;
+  padding-right: 0px;
+  padding-bottom: 2px;
+  padding-left: 0px;
+  margin-top: 18px;
 }
 
-.left-nav	{
-	border-bottom:1px solid #526652;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 6px;
-	} 
-	
+.left-nav {
+  border-bottom: 1px solid #526652;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 6px;
+}
+
 /* Link Definitions */
-.left-nav a	{
-	text-decoration:none;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #526652;
-	} 
-.left-nav a:hover {background:#eee;} 
-.left-nav a.active:hover {text-decoration:none; background:#FFFFFF;} 
-
-.top-level a  {
-	display:block;
-	background:#a3b9a3;
-	padding:5px 0 5px 0;
-	border-top:1px solid #526652;
-	font-weight: bold;
-	text-transform: capitalize;
+.left-nav a {
+  text-decoration:none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #526652;
 }
 
-.second-level a	{
-	display:block;
-	background:#c4d3c4;
-	padding:5px 0 5px 0; 
-	border-top:1px solid #FFFFFF;
-	font-weight: normal;
-	text-transform: none;
-} 
+.left-nav a:hover { background: #eee; }
+.left-nav a.active:hover { text-decoration: none; background: #FFFFFF; }
 
-.top-level a	{
-padding-left:4px;
-padding-right:4px;
+.top-level a {
+  display: block;
+  background: #a3b9a3;
+  padding: 5px 0 5px 0;
+  border-top: 1px solid #526652;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
-.second-level a	{
-padding-left:12px;
-padding-right:4px;
-} 
+.second-level a {
+  display: block;
+  background: #c4d3c4;
+  padding: 5px 0 5px 0;
+  border-top: 1px solid #FFFFFF;
+  font-weight: normal;
+  text-transform: none;
+}
 
-a.active	{background:#FFFFFF;}
-a.top-active	{background:#c4d3c4;}
+.top-level a {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.second-level a {
+  padding-left:12px;
+  padding-right:4px;
+}
+
+a.active { background: #FFFFFF; }
+a.top-active { background: #c4d3c4; }
 
 .solo:link {
-	font-weight: 300;
-	color: #073B8E;
-	text-decoration: none;
+  font-weight: 300;
+  color: #073B8E;
+  text-decoration: none;
 }
+
 .solo:visited {
-	font-weight: 300;
-	color: #073B8E;
-	text-decoration: none;
+  font-weight: 300;
+  color: #073B8E;
+  text-decoration: none;
 }
+
 .solo:hover {
-	font-weight: 300;
-	color: #073B8E;
-	text-decoration: underline;
+  font-weight: 300;
+  color: #073B8E;
+  text-decoration: underline;
 }
 
 code.section {
-	font-family: "Andale Mono", "Lucida Console", Monaco, fixed, monospace; 
-	font-size: 80%
-} 
+  font-family: "Andale Mono", "Lucida Console", Monaco, fixed, monospace;
+  font-size: 80%;
+}
 
-/* Button style Definitions  */
-.button-blue input	{
-	color: #5A595A;
-	font-weight:bold;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	text-align:center;
-	border: 1px solid #313063;
-	padding: 0px 1px 0px 2px;
-	background:#84AEDE url(../images/FS_butt_tile4.gif);
-	height: 19px;	
+/* Button style Definitions */
+.button-blue input  {
+  color: #5A595A;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid #313063;
+  padding: 0px 1px 0px 2px;
+  background:#84AEDE url(../images/FS_butt_tile4.gif);
+  height: 19px;
 }

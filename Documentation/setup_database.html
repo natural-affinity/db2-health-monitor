@@ -1,380 +1,378 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "/DTD/xhtml1-Strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- 
+<!--
     @project XHTML 1.0 Strict Documentation
     @author Rizwan Tejpar <rtejpar@ca.ibm.com>
     @version 1.0
     @updated 07/22/07
     @verified 07/22/07 (W3C Validator)
-    @browser IE6, IE7, Firefox 1.5, Firefox 2
+    @browser IE 6, IE7, Firefox 1.5, Firefox 2
     @disclaimer
-            Any references or links in this document to non-IBM Web sites are provided for convenience 
-            only and do not in any manner serve as an endorsement of those non-IBM Web sites or their 
-            owners. The materials at the non-IBM Web sites are not owned or licensed by IBM and use of 
-            those non-IBM Web sites is at your own risk. IBM makes no representations, warranties, or 
-            other commitments whatsoever about any non-IBM Web sites or third-party resources that may 
-            be referenced, accessible from, or linked from this document. In addition, IBM is not a 
-            party to or responsible for any transactions you may enter into with third parties, even if 
-            you learn of such parties (or use a link to such parties) from this document. You are 
-            responsible for compliance with any license terms or other obligations for use of the 
-            non-IBM Web sites in respect of your use of those non-IBM Web sites. You acknowledge and 
-            agree that IBM is not responsible for the availability of such external sites or resources, 
-            and is not responsible or liable for any content, services, products, or other materials on 
-            or available from those sites or resources. 
+            Any references or links in this document to non-IBM Web sites are provided for convenience
+            only and do not in any manner serve as an endorsement of those non-IBM Web sites or their
+            owners. The materials at the non-IBM Web sites are not owned or licensed by IBM and use of
+            those non-IBM Web sites is at your own risk. IBM makes no representations, warranties, or
+            other commitments whatsoever about any non-IBM Web sites or third-party resources that may
+            be referenced, accessible from, or linked from this document. In addition, IBM is not a
+            party to or responsible for any transactions you may enter into with third parties, even if
+            you learn of such parties (or use a link to such parties) from this document. You are
+            responsible for compliance with any license terms or other obligations for use of the
+            non-IBM Web sites in respect of your use of those non-IBM Web sites. You acknowledge and
+            agree that IBM is not responsible for the availability of such external sites or resources,
+            and is not responsible or liable for any content, services, products, or other materials on
+            or available from those sites or resources.
     @disclaimer
-            (c) Copyright IBM Corp. 2007 All rights reserved. 
-  			
-            The following sample of source code ("Sample") is owned by International Business Machines 
-            Corporation or one of its subsidiaries ("IBM") and is copyrighted and licensed, not sold. 
-  			
-            The Sample is not part of any standard IBM product. You may use, copy, modify, and distribute 
-            the Sample in any form without payment to IBM, for the purpose of assisting you in the 
+            (c) Copyright IBM Corp. 2007 All rights reserved.
+
+            The following sample of source code ("Sample") is owned by International Business Machines
+            Corporation or one of its subsidiaries ("IBM") and is copyrighted and licensed, not sold.
+
+            The Sample is not part of any standard IBM product. You may use, copy, modify, and distribute
+            the Sample in any form without payment to IBM, for the purpose of assisting you in the
             development of your applications.
-  			
-            The Sample code is provided to you on an "AS IS" basis, without warranty of any kind. 
-  
-            IBM HEREBY EXPRESSLY DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT 
-            LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
-             
-            Some jurisdictions do not allow for the exclusion or limitation of implied warranties, so the 
-            above limitations or exclusions may not apply to you. IBM shall not be liable for any damages 
-            you suffer as a result of using, copying, modifying or distributing the Sample, even if IBM 
-            has been advised of the possibility of such damages.    
-  -->
-	<head>
-		<title>DB2 Health Monitor Sample Application for PHP</title>
-		<link rel="stylesheet" type="text/css" href="./nav.css"></link>
-	</head>
-	
-	<body style="margin:0px">
-		<table style="width:100%" cellspacing="0px" cellpadding="0px">
-			<tr>
-				<td rowspan="2" style="width:200px;background-image:url('./images/DB_nav_tile.gif');" valign="top"></td> 
-				<td>
-					<table style="width:100%" cellspacing="0" cellpadding="0">
-		    			<tr class="bannerBG">
-			  				<td>
-								<img src="images/en_US/im_ban.bmp" alt="IBM Information Management" />
-			  				</td>
-			  				<td style="text-align:right">
-								<img src="./images/FS_ban_IBMLogo.gif" alt="IBM" />
-			  				</td>
-		 				</tr>
-					</table>
-				</td>
-			</tr>
-  
-   			<tr>
-  				<td class="content">  
-					<div class="content_width">
-						<h1 class="head1">Creating the DB2 Sample Database</h1>
-						<br />
-						<table cellspacing="0" cellpadding="0">
-			  				<tr> 
-								<td class="imageInText_placement">
-									<img src="images/header_createDatabase2.gif" alt="Create Sample DB" />
-								</td>
-								<td class="tableText" style="padding-left:5px">						
-									You can create the DB2 sample database on either:
-									<br /><br />
-									<ul>
-										<li>A DB2 server installed on the same machine as the HTTP server.</li>
-										<li>
-											 A remote copy of a DB2 server (accessed through a DB2 client
-											 on the same machine as the HTTP server) or through a direct 
-											 TCP/IP connection.
-										</li>
-									</ul>
-								</td>
-			  				</tr>
-						</table>
-						
-						<h1 class="head2green">Creating the Database using the Command Line Processor (CLP)</h1>			
-						<p>
-							Once the DB2 server is installed, verify the installation by creating a sample database 
-							and running SQL commands to retrieve health data. The database that is created to 
-							verify the installation is the same database used by the DB2 Health Monitor Sample 
-							Application for PHP.
-							
-							<br /><br />
-							To create the database:
-						</p>
-						<ol>
-							<li>
-								Log on to the system using the DB2 instance user ID that was created while installing
-							    the DB2 server (on Linux systems the default user ID is db2inst1).  
-								On Windows, use either a Windows administrator ID or the ID specified during 
-								installation.
-							</li>
-							<li>
-								Enter the db2sampl command to create the SAMPLE database using the <code>-sql</code>
-								and <code>-xml</code> options to ensure that both SQL and XML sample data is created. 
-								
-								<br /><br />	
-								<table cellspacing="0px" cellpadding="0px">
-									<tr>
-										<td class="tableText" style="padding:5px;background-color:lightgreen">
-											<code class="section">
-												db2sampl -sql -xml
-											</code>			
-										</td>
-									</tr>
-								</table>
-								
-								<br />
-								This command might take a few minutes to process and will display status messages 
-								during execution similar to those shown below:
-								
-								<br /><br />
-								<table cellspacing="0px" cellpadding="0px">
-									<tr>
-										<td class="tableText" style="padding:5px;background-color:lightgreen">
-											Creating database &ldquo;SAMPLE&rdquo;...<br />
-											Connecting to database &ldquo;SAMPLE&rdquo;...<br />
-											Creating tables and data in schema &ldquo;TEJPAR&rdquo;<br />
-											Creating tables with XML columns and XML data in schema 
-											&ldquo;TEJPAR&rdquo;...<br /><br />
-											'db2sample' processing complete.		
-										</td>
-									</tr>
-								</table>
-																
-								<br />
-								The SAMPLE database is automatically cataloged with the database alias SAMPLE 
-								when it is created.
-							</li>
-							<li>
-								Enter the following DB2 command from a DB2 command window to connect to the SAMPLE 
-								database:
-								
-								<br /><br />
-								<table cellspacing="0px" cellpadding="0px">
-									<tr>
-										<td class="tableText" style="padding:5px;background-color:lightgreen">
-											<code class="section">
-												db2 connect to sample
-											</code>			
-										</td>
-									</tr>
-								</table>
-								
-								<br />
-								A message similar to the following indicates a successful connection to the 
-								database:
-								
-								<br /><br />
-								<table cellspacing="0px" cellpadding="0px">
-									<tr>
-										<td class="tableText" style="padding:5px;background-color:lightgreen">
-											Database Connection Information<br /><br />
-											Database Server = DB2/NT 9.1.0<br />
-											SQL authorization ID = TEJPAR<br />
-											Local database alias = SAMPLE	
-										</td>
-									</tr>
-								</table>	
-								<br />							
-							</li>
-							<li>
-								While still connected to the database, type the following in the DB2 command
-								window:
-								
-								<br /><br />
-								<table cellspacing="0px" cellpadding="0px">
-									<tr>
-										<td class="tableText" style="padding:5px;background-color:lightgreen">
-											<code class="section">
-												db2 select * from table(health_db_hi('',-1)) as t
-											</code>			
-										</td>
-									</tr>
-								</table>	
-								
-								<br />
-								Health alerts take time to generate and therefore, it is possible for zero records
-								to be returned when the above command is executed.  If no data is present, wait
-								5 to 30 minutes before trying the command again.  However, a zero records 
-								returned message still indicates that the command executed 
-								successfully.  The end of the output may appear as follows:
-								
-								<br /><br />
-								<table cellspacing="0px" cellpadding="0px">
-									<tr>
-										<td class="tableText" style="padding:5px;background-color:lightgreen">
-											0 record(s) selected
-										</td>
-									</tr>
-								</table>								
-							</li>
-						</ol>
 
-						<h1 class="head2green">Cataloging the Database from a DB2 client</h1>			
-						<p>
-							If the DB2 server is on the same machine as the HTTP server that hosts the Web service, 
-							it is not necessary to catalog the sample database.
-				
-							<br /><br />
-							If the DB2 server is on a separate machine from the HTTP server, it is necessary to 
-							install a DB2 client on the same machine as the HTTP server.  Installing Zend Core for 
-							IBM will provide an option to take care of this. Alternatively, it is possible to download
-							and install a DB2 client from another source.			
-							
-							<br /><br />
-			  				After a DB2 client is installed, catalog the remote DB2 server and identify the DB2 database.  
-			  				The easiest way to do this is to use the DB2 Configuration Assistant. 
-			  				It can automatically search the local network for DB2 servers to assist in the setup.		
-						</p>
+            The Sample code is provided to you on an "AS IS" basis, without warranty of any kind.
 
-						<h1 class="head2green">Creating a Direct TCP/IP Connection to a Remote Server</h1>			
-						<p>
-			 				You can connect to a server through a client or directly to a TCP/IP port.
-			  				If a direct TCP/IP connection is chosen, the hostname and port number of the 
-			  				machine that houses the database server must be completed.  For a DB2 server, the default 
-			  				port number is 50000, but it can be changed.  If the DB2 database is cataloged 
-			  				locally on the client (that is, the DB2 server and HTTP server are on separate machines), 
-			  				determine the TCP/IP port number being used by 
-			  				the database server by running the db2 list node directory command:
-			  			</p>  				
-						<table cellspacing="0px" cellpadding="0px">
-							<tr>
-								<td class="tableText" style="padding:10px;background-color:lightgreen">
-									<code class="section">
-										db2 list node directory
-									</code>			
-								</td>
-							</tr>
-						</table>
-						<br />		  				 			
-						<p>
-			  				Running the command will return the results similar to the following:
-			  			</p>	
-						<table cellspacing="0px" cellpadding="0px">
-							<tr>
-								<td class="tableText" style="padding:10px;background-color:lightgreen">
-									Node Directory<br />
-									Number of entries in the directory = 1<br /><br />
-									Node 1 entry:<br />
-									Node name = DB2<br />
-									Comment =<br />
-									Directory entry type = LOCAL<br />
-									Protocol = TCPIP<br />
-									Hostname = sample.ibm.com<br />
-									Service name = 50000<br />	
-								</td>
-							</tr>
-						</table>	
-						<br />			
-						<p>
-							If the DB2 database is not cataloged, run the following command to
-							determine the value of SVCENAME: 
-						</p>			
-						<table cellspacing="0px" cellpadding="0px">
-							<tr>
-								<td class="tableText" style="padding:10px;background-color:lightgreen">
-									<code class="section">
-										db2 get dbm cfg
-									</code>			
-								</td>
-							</tr>
-						</table>	
-						<br />						
-						<p>
-							If SVCENAME is not a numeric value 
-							(indicating a port number), then go to /etc/services (on Linux) or 
-							\WINDOWS\System32\drivers\etc\services (on Windows) to lookup the port 
-							mapping for that service name. 			  					
-			  			</p>
-		  
-			  			<h1 class="head2green">Database schema</h1>
-						<p>			  
-							A database schema is a logical collection of objects within a database (for example, 
-							tables and views).  A schema lets you create multiple instances of the same object 
-							without having to create a new database.  Therefore, multiple applications can store 
-							data in a single database without encountering namespace collisions.
-							
-							<br /><br />
-							By default, the DB2 sample database is created under a schema name that corresponds 
-							to the username used to create the sample database. On a Linux system, the 
-							default schema name is db2inst1.							
-						</p>
+            IBM HEREBY EXPRESSLY DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT
+            LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
-						<h1 class="head2green">Useful links</h1>
-  			  			<a href="http://www.ibm.com/software/data/db2/udb/support/downloadv8.html" class="solo">
-  			  				<img style="border:0px" src="images/external_link.gif" alt="Icon representing a link to external information" />
-  			  				DB2 client code
-  			  			</a>
-  			  			<br />
-  			  			<a href="http://www.ibm.com/software/data/db2/udb/db2express/" class="solo">
-  			  				<img style="border:0px" src="images/external_link.gif" alt="Icon representing a link to external information" />
-  			  				DB2 Express-C
-  			  			</a>
-  			  			<br />			    			    			  
-  			  			<a href="ftp://ftp.software.ibm.com/ps/products/db2/info/vr82/pdf/en_US/ExpressResellersGuide.pdf" class="solo">
-  			  				<img style="border:0px" src="images/external_link.gif" alt="Icon representing a link to external information" />
-  			  				DB2 Express basics: installation, configuration and maintenance.
-  			  			</a>  			    		
-  			  			<br /><br />	
-						
-    					<p class="cp">
-    					<br />
-    						&copy; Copyright IBM Corp. 2007. All rights reserved.
-							IBM&reg;, the IBM logo, DB2&reg;, AIX&reg;, and pureXML&trade; are 
-							registered trademarks of International Business Machines Corporation in the 
-							United States, other countries, or both.
+            Some jurisdictions do not allow for the exclusion or limitation of implied warranties, so the
+            above limitations or exclusions may not apply to you. IBM shall not be liable for any damages
+            you suffer as a result of using, copying, modifying or distributing the Sample, even if IBM
+            has been advised of the possibility of such damages.
+-->
+  <head>
+    <title>DB2 Health Monitor Sample Application for PHP</title>
+    <link rel="stylesheet" type="text/css" href="./nav.css"></link>
+  </head>
 
-							Zend and Zend Core are registered trademarks of Zend Technologies Limited,
-							in the United States, other countries, or both.
-							
-							Mozilla&reg; and Firefox&reg; are registered trademarks of the Mozilla Foundation in the
-							United States and other countries.
-							
-							Microsoft, Windows, Windows NT, Internet Explorer&reg;, and the Windows logo are 
-							trademarks of Microsoft Corporation in the United States, other countries, or
-							both.
-							
-							Linux is a registered trademark of Linus Torvalds in the United
-							States, other countries, or both.
-							
-							Other company, product, or service names
-							may be trademarks or service marks of others.
-						</p>									  				    			  
-					</div>			
-				</td>
-			</tr>  
-		</table>
+  <body style="margin:0px;">
+    <table style="width:100%;" cellspacing="0px" cellpadding="0px">
+      <tr>
+        <td rowspan="2" style="width:200px;background-image:url('./images/DB_nav_tile.gif');" valign="top"></td>
+        <td>
+          <table style="width:100%" cellspacing="0" cellpadding="0">
+            <tr class="bannerBG">
+              <td>
+                <img src="images/en_US/im_ban.bmp" alt="IBM Information Management" />
+              </td>
+              <td style="text-align:right">
+                <img src="./images/FS_ban_IBMLogo.gif" alt="IBM" />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
 
-		<div class="navigation">
-			<img src="images/FS_ban_mosaic.gif" alt="Data Management Mosiac imagery" />
-    		<div class="container"> 
-     			<div class="left-nav"> 
-       				<div class="top-level"> 
-        				<a href="./index.html">Welcome</a> 
-        				<a href="./requirements.html">Requirements</a>
-        				<a href="setup.html">Setup</a> 
-          					<div class="second-level"> 
-    							<a class="active" href="setup_database.html">Creating the Sample Database</a> 
-		        				<a href="setup_php.html">Setting up PHP</a> 
-          						<a href="setup_sample.html">Setting up the Sample</a> 
-         						<a href="setup_testdb.html">Testing the Connection</a> 
-         						<a href="setup_testservice.html">Testing the Service</a>        			           	          	
- 		   					</div>		
-		       			<a href="using.html">Using</a>
-      	        		<div class="second-level"> 
-	      	        		<a href="../SOADemo/index.html">DB2 Health Monitor Sample</a>         	          	
-		       			</div>	 		   					
-          				<a href="./architecture.html">Architecture</a> 
-						<div class="second-level">           	
-							<a href="./architecture_directory.html">Directory Structure</a>
-		          			<a href="./architecture_files.html">File Breakdown</a> 
-		          			<a href="./architecture_deploy.html">Deployment Models</a>
-        		  			<a href="./architecture_errors.html">Error Handling</a> 
-        		  			<a href="./architecture_widgets.html">JavaScript Widgets</a>          	
-						</div>     					   		  	
-          				<a href="lessons.html">Lessons Learned</a>
-       				</div>
-				</div>
-			</div>
-		</div>	
-	</body>
+      <tr>
+        <td class="content">
+          <div class="content_width">
+            <h1 class="head1">Creating the DB2 Sample Database</h1>
+            <br />
+            <table cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="imageInText_placement">
+                  <img src="images/header_createDatabase2.gif" alt="Create Sample DB" />
+                </td>
+                <td class="tableText" style="padding-left:5px">
+                  You can create the DB2 sample database on either:
+                  <br /><br />
+                  <ul>
+                    <li>A DB2 server installed on the same machine as the HTTP server.</li>
+                    <li>
+                       A remote copy of a DB2 server (accessed through a DB2 client
+                       on the same machine as the HTTP server) or through a direct
+                       TCP/IP connection.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+
+            <h1 class="head2green">Creating the Database using the Command Line Processor (CLP)</h1>
+            <p>
+              Once the DB2 server is installed, verify the installation by creating a sample database
+              and running SQL commands to retrieve health data. The database that is created to
+              verify the installation is the same database used by the DB2 Health Monitor Sample
+              Application for PHP.
+              <br /><br />
+              To create the database:
+            </p>
+            <ol>
+              <li>
+                Log on to the system using the DB2 instance user ID that was created while installing
+                the DB2 server (on Linux systems the default user ID is db2inst1).
+                On Windows, use either a Windows administrator ID or the ID specified during installation.
+              </li>
+              <li>
+                Enter the db2sampl command to create the SAMPLE database using the <code>-sql</code>
+                and <code>-xml</code> options to ensure that both SQL and XML sample data is created.
+
+                <br /><br />
+                <table cellspacing="0px" cellpadding="0px">
+                  <tr>
+                    <td class="tableText" style="padding:5px;background-color:lightgreen">
+                      <code class="section">
+                        db2sampl -sql -xml
+                      </code>
+                    </td>
+                  </tr>
+                </table>
+
+                <br />
+                This command might take a few minutes to process and will display status messages
+                during execution similar to those shown below:
+
+                <br /><br />
+                <table cellspacing="0px" cellpadding="0px">
+                  <tr>
+                    <td class="tableText" style="padding:5px;background-color:lightgreen">
+                      Creating database &ldquo;SAMPLE&rdquo;...<br />
+                      Connecting to database &ldquo;SAMPLE&rdquo;...<br />
+                      Creating tables and data in schema &ldquo;TEJPAR&rdquo;<br />
+                      Creating tables with XML columns and XML data in schema
+                      &ldquo;TEJPAR&rdquo;...<br /><br />
+                      'db2sample' processing complete.
+                    </td>
+                  </tr>
+                </table>
+
+                <br />
+                The SAMPLE database is automatically cataloged with the database alias SAMPLE
+                when it is created.
+              </li>
+              <li>
+                Enter the following DB2 command from a DB2 command window to connect to the SAMPLE
+                database:
+
+                <br /><br />
+                <table cellspacing="0px" cellpadding="0px">
+                  <tr>
+                    <td class="tableText" style="padding:5px;background-color:lightgreen">
+                      <code class="section">
+                        db2 connect to sample
+                      </code>
+                    </td>
+                  </tr>
+                </table>
+
+                <br />
+                A message similar to the following indicates a successful connection to the
+                database:
+
+                <br /><br />
+                <table cellspacing="0px" cellpadding="0px">
+                  <tr>
+                    <td class="tableText" style="padding:5px;background-color:lightgreen">
+                      Database Connection Information<br /><br />
+                      Database Server = DB2/NT 9.1.0<br />
+                      SQL authorization ID = TEJPAR<br />
+                      Local database alias = SAMPLE
+                    </td>
+                  </tr>
+                </table>
+                <br />
+              </li>
+              <li>
+                While still connected to the database, type the following in the DB2 command
+                window:
+
+                <br /><br />
+                <table cellspacing="0px" cellpadding="0px">
+                  <tr>
+                    <td class="tableText" style="padding:5px;background-color:lightgreen">
+                      <code class="section">
+                        db2 select * from table(health_db_hi('',-1)) as t
+                      </code>
+                    </td>
+                  </tr>
+                </table>
+
+                <br />
+                Health alerts take time to generate and therefore, it is possible for zero records
+                to be returned when the above command is executed.  If no data is present, wait
+                5 to 30 minutes before trying the command again.  However, a zero records
+                returned message still indicates that the command executed
+                successfully.  The end of the output may appear as follows:
+
+                <br /><br />
+                <table cellspacing="0px" cellpadding="0px">
+                  <tr>
+                    <td class="tableText" style="padding:5px;background-color:lightgreen">
+                      0 record(s) selected
+                    </td>
+                  </tr>
+                </table>
+              </li>
+            </ol>
+
+            <h1 class="head2green">Cataloging the Database from a DB2 client</h1>
+            <p>
+              If the DB2 server is on the same machine as the HTTP server that hosts the Web service,
+              it is not necessary to catalog the sample database.
+
+              <br /><br />
+              If the DB2 server is on a separate machine from the HTTP server, it is necessary to
+              install a DB2 client on the same machine as the HTTP server.  Installing Zend Core for
+              IBM will provide an option to take care of this. Alternatively, it is possible to download
+              and install a DB2 client from another source.
+
+              <br /><br />
+                After a DB2 client is installed, catalog the remote DB2 server and identify the DB2 database.
+                The easiest way to do this is to use the DB2 Configuration Assistant.
+                It can automatically search the local network for DB2 servers to assist in the setup.
+            </p>
+
+            <h1 class="head2green">Creating a Direct TCP/IP Connection to a Remote Server</h1>
+            <p>
+              You can connect to a server through a client or directly to a TCP/IP port.
+                If a direct TCP/IP connection is chosen, the hostname and port number of the
+                machine that houses the database server must be completed.  For a DB2 server, the default
+                port number is 50000, but it can be changed.  If the DB2 database is cataloged
+                locally on the client (that is, the DB2 server and HTTP server are on separate machines),
+                determine the TCP/IP port number being used by
+                the database server by running the db2 list node directory command:
+              </p>
+            <table cellspacing="0px" cellpadding="0px">
+              <tr>
+                <td class="tableText" style="padding:10px;background-color:lightgreen">
+                  <code class="section">
+                    db2 list node directory
+                  </code>
+                </td>
+              </tr>
+            </table>
+            <br />
+            <p>
+              Running the command will return the results similar to the following:
+            </p>
+            <table cellspacing="0px" cellpadding="0px">
+              <tr>
+                <td class="tableText" style="padding:10px;background-color:lightgreen">
+                  Node Directory<br />
+                  Number of entries in the directory = 1<br /><br />
+                  Node 1 entry:<br />
+                  Node name = DB2<br />
+                  Comment =<br />
+                  Directory entry type = LOCAL<br />
+                  Protocol = TCPIP<br />
+                  Hostname = sample.ibm.com<br />
+                  Service name = 50000<br />
+                </td>
+              </tr>
+            </table>
+            <br />
+            <p>
+              If the DB2 database is not cataloged, run the following command to
+              determine the value of SVCENAME:
+            </p>
+            <table cellspacing="0px" cellpadding="0px">
+              <tr>
+                <td class="tableText" style="padding:10px;background-color:lightgreen">
+                  <code class="section">
+                    db2 get dbm cfg
+                  </code>
+                </td>
+              </tr>
+            </table>
+            <br />
+            <p>
+              If SVCENAME is not a numeric value
+              (indicating a port number), then go to /etc/services (on Linux) or
+              \WINDOWS\System32\drivers\etc\services (on Windows) to lookup the port
+              mapping for that service name.
+            </p>
+
+            <h1 class="head2green">Database schema</h1>
+            <p>
+              A database schema is a logical collection of objects within a database (for example,
+              tables and views).  A schema lets you create multiple instances of the same object
+              without having to create a new database.  Therefore, multiple applications can store
+              data in a single database without encountering namespace collisions.
+
+              <br /><br />
+              By default, the DB2 sample database is created under a schema name that corresponds
+              to the username used to create the sample database. On a Linux system, the
+              default schema name is db2inst1.
+            </p>
+
+            <h1 class="head2green">Useful links</h1>
+            <a href="http://www.ibm.com/software/data/db2/udb/support/downloadv8.html" class="solo">
+              <img style="border:0px" src="images/external_link.gif" alt="Icon representing a link to external information" />
+              DB2 client code
+            </a>
+            <br />
+            <a href="http://www.ibm.com/software/data/db2/udb/db2express/" class="solo">
+              <img style="border:0px" src="images/external_link.gif" alt="Icon representing a link to external information" />
+              DB2 Express-C
+            </a>
+            <br />
+            <a href="ftp://ftp.software.ibm.com/ps/products/db2/info/vr82/pdf/en_US/ExpressResellersGuide.pdf" class="solo">
+              <img style="border:0px" src="images/external_link.gif" alt="Icon representing a link to external information" />
+              DB2 Express basics: installation, configuration and maintenance.
+            </a>
+            <br /><br />
+
+            <p class="cp">
+              <br />
+              &copy; Copyright IBM Corp. 2007. All rights reserved.
+              IBM&reg;, the IBM logo, DB2&reg;, AIX&reg;, and pureXML&trade; are
+              registered trademarks of International Business Machines Corporation in the
+              United States, other countries, or both.
+
+              Zend and Zend Core are registered trademarks of Zend Technologies Limited,
+              in the United States, other countries, or both.
+
+              Mozilla&reg; and Firefox&reg; are registered trademarks of the Mozilla Foundation in the
+              United States and other countries.
+
+              Microsoft, Windows, Windows NT, Internet Explorer&reg;, and the Windows logo are
+              trademarks of Microsoft Corporation in the United States, other countries, or
+              both.
+
+              Linux is a registered trademark of Linus Torvalds in the United
+              States, other countries, or both.
+
+              Other company, product, or service names
+              may be trademarks or service marks of others.
+            </p>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="navigation">
+      <img src="images/FS_ban_mosaic.gif" alt="Data Management Mosiac imagery" />
+      <div class="container">
+        <div class="left-nav">
+          <div class="top-level">
+            <a href="./index.html">Welcome</a>
+            <a href="./requirements.html">Requirements</a>
+            <a href="setup.html">Setup</a>
+            <div class="second-level">
+              <a class="active" href="setup_database.html">Creating the Sample Database</a>
+              <a href="setup_php.html">Setting up PHP</a>
+              <a href="setup_sample.html">Setting up the Sample</a>
+              <a href="setup_testdb.html">Testing the Connection</a>
+              <a href="setup_testservice.html">Testing the Service</a>
+            </div>
+            <a href="using.html">Using</a>
+            <div class="second-level">
+              <a href="../SOADemo/index.html">DB2 Health Monitor Sample</a>
+            </div>
+            <a href="./architecture.html">Architecture</a>
+            <div class="second-level">
+              <a href="./architecture_directory.html">Directory Structure</a>
+              <a href="./architecture_files.html">File Breakdown</a>
+              <a href="./architecture_deploy.html">Deployment Models</a>
+              <a href="./architecture_errors.html">Error Handling</a>
+              <a href="./architecture_widgets.html">JavaScript Widgets</a>
+            </div>
+            <a href="lessons.html">Lessons Learned</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

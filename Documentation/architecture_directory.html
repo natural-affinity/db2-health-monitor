@@ -1,260 +1,260 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "/DTD/xhtml1-Strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- 
+<!--
     @project XHTML 1.0 Strict Documentation
     @author Rizwan Tejpar <rtejpar@ca.ibm.com>
     @version 1.0
     @updated 07/22/07
     @verified 07/22/07 (W3C Validator)
-    @browser IE6, IE7, Firefox 1.5, Firefox 2
+    @browser IE 6, IE7, Firefox 1.5, Firefox 2
     @disclaimer
-            Any references or links in this document to non-IBM Web sites are provided for convenience 
-            only and do not in any manner serve as an endorsement of those non-IBM Web sites or their 
-            owners. The materials at the non-IBM Web sites are not owned or licensed by IBM and use of 
-            those non-IBM Web sites is at your own risk. IBM makes no representations, warranties, or 
-            other commitments whatsoever about any non-IBM Web sites or third-party resources that may 
-            be referenced, accessible from, or linked from this document. In addition, IBM is not a 
-            party to or responsible for any transactions you may enter into with third parties, even if 
-            you learn of such parties (or use a link to such parties) from this document. You are 
-            responsible for compliance with any license terms or other obligations for use of the 
-            non-IBM Web sites in respect of your use of those non-IBM Web sites. You acknowledge and 
-            agree that IBM is not responsible for the availability of such external sites or resources, 
-            and is not responsible or liable for any content, services, products, or other materials on 
-            or available from those sites or resources. 
+            Any references or links in this document to non-IBM Web sites are provided for convenience
+            only and do not in any manner serve as an endorsement of those non-IBM Web sites or their
+            owners. The materials at the non-IBM Web sites are not owned or licensed by IBM and use of
+            those non-IBM Web sites is at your own risk. IBM makes no representations, warranties, or
+            other commitments whatsoever about any non-IBM Web sites or third-party resources that may
+            be referenced, accessible from, or linked from this document. In addition, IBM is not a
+            party to or responsible for any transactions you may enter into with third parties, even if
+            you learn of such parties (or use a link to such parties) from this document. You are
+            responsible for compliance with any license terms or other obligations for use of the
+            non-IBM Web sites in respect of your use of those non-IBM Web sites. You acknowledge and
+            agree that IBM is not responsible for the availability of such external sites or resources,
+            and is not responsible or liable for any content, services, products, or other materials on
+            or available from those sites or resources.
     @disclaimer
-            (c) Copyright IBM Corp. 2007 All rights reserved. 
-  			
-            The following sample of source code ("Sample") is owned by International Business Machines 
-            Corporation or one of its subsidiaries ("IBM") and is copyrighted and licensed, not sold. 
-  			
-            The Sample is not part of any standard IBM product. You may use, copy, modify, and distribute 
-            the Sample in any form without payment to IBM, for the purpose of assisting you in the 
+            (c) Copyright IBM Corp. 2007 All rights reserved.
+
+            The following sample of source code ("Sample") is owned by International Business Machines
+            Corporation or one of its subsidiaries ("IBM") and is copyrighted and licensed, not sold.
+
+            The Sample is not part of any standard IBM product. You may use, copy, modify, and distribute
+            the Sample in any form without payment to IBM, for the purpose of assisting you in the
             development of your applications.
-  			
-            The Sample code is provided to you on an "AS IS" basis, without warranty of any kind. 
-  
-            IBM HEREBY EXPRESSLY DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT 
-            LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
-             
-            Some jurisdictions do not allow for the exclusion or limitation of implied warranties, so the 
-            above limitations or exclusions may not apply to you. IBM shall not be liable for any damages 
-            you suffer as a result of using, copying, modifying or distributing the Sample, even if IBM 
-            has been advised of the possibility of such damages.    
-  -->
-	<head>
-		<title>DB2 Health Monitor Sample Application for PHP</title>
-		<link rel="stylesheet" type="text/css" href="./nav.css"></link>
-	</head>
-	
-	<body style="margin:0px">
-		<table style="width:100%" cellspacing="0px" cellpadding="0px">
-			<tr>
-				<td rowspan="2" style="width:200px;background-image:url('./images/DB_nav_tile.gif');" valign="top"></td> 
-				<td>
-					<table style="width:100%" cellspacing="0" cellpadding="0">
-		    			<tr class="bannerBG">
-			  				<td>
-								<img src="images/en_US/im_ban.bmp" alt="IBM Information Management" />
-			  				</td>
-			  				<td style="text-align:right">
-								<img src="./images/FS_ban_IBMLogo.gif" alt="IBM" />
-			  				</td>
-		 				</tr>
-					</table>
-				</td>
-			</tr>
-			
-  			<tr>
-  				<td class="content">  
-					<div class="content_width">
-						<h1 class="head1">Directory Structure</h1>
-						<br />
-						
-						<table cellspacing="0" cellpadding="0">
-			  				<tr> 
-								<td class="imageInText_placement">
-									<img src="images/header_welcome2.gif" alt="Directory Structure" />
-								</td>	
-								<td class="tableText" style="padding-left:5px">	
-									To distinguish between the different packages in the
-									DB2 Health Monitor Sample Application, each package has been placed in its 
-									own directory.  This directory layout provides another way to view the 
-									structure of an SOA application.				
-								</td>
-							</tr>
-						</table>
-						
-						<h1 class="head2green">Folder Layout</h1>
-						<p>
-							To deploy the sample application, place the unzipped application (containing
-							this directory structure) into the publicly visible folder of the Apache HTTP Server.
-							On a default Windows installation this directory is: 
-							<b>C:\Program Files\Apache Group\Apache2\htdocs\</b>
-							
-							<br /><br />
-							<img src="./images/directory_architecture.bmp" alt="folder layout" />
-						</p>
 
-						<h1 class="head2green">SOADemo Folder</h1>
-						<p>												
-							This is the root directory of the DB2 Health Monitor Sample Application.  It houses all 
-							other directories for the application, as well as all of the 
-							<a href="./architecture_files.html#WebServiceConsumerGUI" class="solo">
-								Web Service Consumer GUI
-							</a> 
-							files.  
-							
-							<br /><br />
-							Both the Web service WSDL document URL, in the 
-							<a href="./architecture_files.html#WebServiceConsumer" class="solo">
-								Web Service Consumer
-							</a> 
-							<a href="./architecture_files.html#config.xml" class="solo">config.xml</a> file and
-							the Web service SOAP server URL in the 
-							<a href="./architecture_files.html#WebServiceProducer" class="solo">
-								Web Service Producer
-							</a> 
-							<a href="./architecture_files.html#DB2Health_Report.wsdl" class="solo">
-								DB2Health_Report.wsdl
-							</a> file use the name of this directory.  Therefore, it is possible to change the name 
-							of the root directory as long as it is reflected in the 
-							<a href="./architecture_files.html#config.xml" class="solo">config.xml</a> and
-							<a href="./architecture_files.html#DB2Health_Report.wsdl" class="solo">
-								DB2Health_Report.wsdl
-							</a> files (all other paths are relative).  In any multi-tier architecture chosen (See 
-							<a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this root 
-							directory is required on both the first- and second-tier Web servers to house the required
-							subdirectories as shown above.
-						</p>
-						
-						<h1 class="head2green">Consumer Folder</h1>
-						<p>												
-							This directory holds all of the
-							<a href="./architecture_files.html#WebServiceConsumer" class="solo">
-								Web Service Consumer
-							</a> components.  In any multi-tier architecture chosen (See 
-							<a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this directory 
-							is placed on the first-tier Web server.  
-						</p>			
-						
-						<h1 class="head2green">Docs Folder</h1>
-						<p>
-							This directory holds the code documentation for all PHP components of the DB2 Health 
-							Monitor Sample Application for PHP, as well as the configuration file that was used
-							with the PHPDocumentor tool in order to generate it.  The directory also contains
-							IBM licensing information for the sample application.  This directory is not required
-							by any of the sample application components, however, a copy should be placed
-							on all tiers (See 
-							<a href="./architecture_deploy.html" class="solo">Deployment Models</a>), so that
-							developers and application users understand their usage rights.
-						</p>			
-		
-						<h1 class="head2green">Images Folder</h1>
-						<p>												
-							This directory holds all images required by the DB2 Health Monitor Sample Application.  
-							In any multi-tier architecture chosen (See 
-							<a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this directory 
-							is placed on the first-tier Web server.
-						</p>	
-						
-						<h1 class="head2green">Include Folder</h1>
-						<p>												
-							This directory holds all third-party packages required by the DB2 Health Monitor Sample
-							Application.  In this case, no third-party packages are used.
-						</p>	
-						
-						<h1 class="head2green">Producer Folder</h1>
-						<p>												
-							This directory holds all of the
-							<a href="./architecture_files.html#WebServiceProducer" class="solo">Web Service Producer</a> 
-							components.  In any multi-tier architecture chosen (See 
-							<a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this 
-							directory is placed on the second-tier Web server.
-						</p>	
-						
-						<h1 class="head2green">Producer DB Folder</h1>
-						<p>												
-							This directory holds all of the 
-							<a href="./architecture_files.html#WebServiceProducerDB" class="solo">
-								Web Service Producer DB 
-							</a> 
-							components.  In any multi-tier architecture chosen (See 
-							<a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this
-							directory is placed on the second-tier Web server.
-						</p>	
-						
-						<h1 class="head2green">Schema Folder</h1>
-						<p>												
-							This directory holds the current version of the XML schema defining the return
-							format of the Web service requests and the XML schema defining the 
-							<a href="./architecture_files.html#WebServiceConsumer" class="solo">
-							Web Service Consumer
-							</a>
-							configuration file format.  In any multi-tier architecture chosen (See 
-							<a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this directory 
-							is placed on the first-tier Web server.
-						</p>																											
-							
-    					<p class="cp">
-    					<br />
-    						&copy; Copyright IBM Corp. 2007. All rights reserved.
-							IBM&reg;, the IBM logo, DB2&reg;, AIX&reg;, and pureXML&trade; are 
-							registered trademarks of International Business Machines Corporation in the 
-							United States, other countries, or both.
+            The Sample code is provided to you on an "AS IS" basis, without warranty of any kind.
 
-							Zend and Zend Core are registered trademarks of Zend Technologies Limited,
-							in the United States, other countries, or both.
-							
-							Mozilla&reg; and Firefox&reg; are registered trademarks of the Mozilla Foundation in the
-							United States and other countries.
-							
-							Microsoft, Windows, Windows NT, Internet Explorer&reg;, and the Windows logo are 
-							trademarks of Microsoft Corporation in the United States, other countries, or
-							both.
-							
-							Linux is a registered trademark of Linus Torvalds in the United
-							States, other countries, or both.
-							
-							Other company, product, or service names
-							may be trademarks or service marks of others.
-						</p>									
-					</div>
-				</td>
-			</tr>				
-		</table>
-	
-		<div class="navigation">
-			<img src="images/FS_ban_mosaic.gif" alt="Data Management Mosiac imagery" />
-    		<div class="container"> 
-     			<div class="left-nav"> 
-       				<div class="top-level"> 
-        				<a href="./index.html">Welcome</a> 
-        				<a href="./requirements.html">Requirements</a>
-        				<a href="setup.html">Setup</a> 
-          					<div class="second-level"> 
-    							<a href="setup_database.html">Creating the Sample Database</a> 
-		        				<a href="setup_php.html">Setting up PHP</a> 
-          						<a href="setup_sample.html">Setting up the Sample</a> 
-         						<a href="setup_testdb.html">Testing the Connection</a> 
-         						<a href="setup_testservice.html">Testing the Service</a>        			           	          	
- 		   					</div>		
-		       			<a href="using.html">Using</a>
-      	        		<div class="second-level"> 
-	      	        		<a href="../SOADemo/index.html">DB2 Health Monitor Sample</a>         	          	
-		       			</div>	 		   					
-          				<a href="./architecture.html">Architecture</a> 
-						<div class="second-level">           	
-							<a class="active" href="./architecture_directory.html">Directory Structure</a>
-		          			<a href="./architecture_files.html">File Breakdown</a> 
-		          			<a href="./architecture_deploy.html">Deployment Models</a>
-        		  			<a href="./architecture_errors.html">Error Handling</a> 
-        		  			<a href="./architecture_widgets.html">JavaScript Widgets</a>          	
-						</div>     					   		  	
-          				<a href="lessons.html">Lessons Learned</a>		
-       				</div>
-				</div>
-			</div>
-		</div>			
-	</body>
+            IBM HEREBY EXPRESSLY DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT
+            LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+            Some jurisdictions do not allow for the exclusion or limitation of implied warranties, so the
+            above limitations or exclusions may not apply to you. IBM shall not be liable for any damages
+            you suffer as a result of using, copying, modifying or distributing the Sample, even if IBM
+            has been advised of the possibility of such damages.
+-->
+  <head>
+    <title>DB2 Health Monitor Sample Application for PHP</title>
+    <link rel="stylesheet" type="text/css" href="./nav.css"></link>
+  </head>
+
+  <body style="margin:0px;">
+    <table style="width:100%;" cellspacing="0px" cellpadding="0px">
+      <tr>
+        <td rowspan="2" style="width:200px;background-image:url('./images/DB_nav_tile.gif');" valign="top"></td>
+        <td>
+          <table style="width:100%" cellspacing="0" cellpadding="0">
+            <tr class="bannerBG">
+              <td>
+                <img src="images/en_US/im_ban.bmp" alt="IBM Information Management" />
+              </td>
+              <td style="text-align:right">
+                <img src="./images/FS_ban_IBMLogo.gif" alt="IBM" />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="content">
+          <div class="content_width">
+            <h1 class="head1">Directory Structure</h1>
+            <br />
+
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                <td class="imageInText_placement">
+                  <img src="images/header_welcome2.gif" alt="Directory Structure" />
+                </td>
+                <td class="tableText" style="padding-left:5px">
+                  To distinguish between the different packages in the
+                  DB2 Health Monitor Sample Application, each package has been placed in its
+                  own directory.  This directory layout provides another way to view the
+                  structure of an SOA application.
+                </td>
+              </tr>
+            </table>
+
+            <h1 class="head2green">Folder Layout</h1>
+            <p>
+              To deploy the sample application, place the unzipped application (containing
+              this directory structure) into the publicly visible folder of the Apache HTTP Server.
+              On a default Windows installation this directory is:
+              <b>C:\Program Files\Apache Group\Apache2\htdocs\</b>
+
+              <br /><br />
+              <img src="./images/directory_architecture.bmp" alt="folder layout" />
+            </p>
+
+            <h1 class="head2green">SOADemo Folder</h1>
+            <p>
+              This is the root directory of the DB2 Health Monitor Sample Application.  It houses all
+              other directories for the application, as well as all of the
+              <a href="./architecture_files.html#WebServiceConsumerGUI" class="solo">
+                Web Service Consumer GUI
+              </a>
+              files.
+
+              <br /><br />
+              Both the Web service WSDL document URL, in the
+              <a href="./architecture_files.html#WebServiceConsumer" class="solo">
+                Web Service Consumer
+              </a>
+              <a href="./architecture_files.html#config.xml" class="solo">config.xml</a> file and
+              the Web service SOAP server URL in the
+              <a href="./architecture_files.html#WebServiceProducer" class="solo">
+                Web Service Producer
+              </a>
+              <a href="./architecture_files.html#DB2Health_Report.wsdl" class="solo">
+                DB2Health_Report.wsdl
+              </a> file use the name of this directory.  Therefore, it is possible to change the name
+              of the root directory as long as it is reflected in the
+              <a href="./architecture_files.html#config.xml" class="solo">config.xml</a> and
+              <a href="./architecture_files.html#DB2Health_Report.wsdl" class="solo">
+                DB2Health_Report.wsdl
+              </a> files (all other paths are relative).  In any multi-tier architecture chosen (See
+              <a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this root
+              directory is required on both the first- and second-tier Web servers to house the required
+              subdirectories as shown above.
+            </p>
+
+            <h1 class="head2green">Consumer Folder</h1>
+            <p>
+              This directory holds all of the
+              <a href="./architecture_files.html#WebServiceConsumer" class="solo">
+                Web Service Consumer
+              </a> components.  In any multi-tier architecture chosen (See
+              <a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this directory
+              is placed on the first-tier Web server.
+            </p>
+
+            <h1 class="head2green">Docs Folder</h1>
+            <p>
+              This directory holds the code documentation for all PHP components of the DB2 Health
+              Monitor Sample Application for PHP, as well as the configuration file that was used
+              with the PHPDocumentor tool in order to generate it.  The directory also contains
+              IBM licensing information for the sample application.  This directory is not required
+              by any of the sample application components, however, a copy should be placed
+              on all tiers (See
+              <a href="./architecture_deploy.html" class="solo">Deployment Models</a>), so that
+              developers and application users understand their usage rights.
+            </p>
+
+            <h1 class="head2green">Images Folder</h1>
+            <p>
+              This directory holds all images required by the DB2 Health Monitor Sample Application.
+              In any multi-tier architecture chosen (See
+              <a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this directory
+              is placed on the first-tier Web server.
+            </p>
+
+            <h1 class="head2green">Include Folder</h1>
+            <p>
+              This directory holds all third-party packages required by the DB2 Health Monitor Sample
+              Application.  In this case, no third-party packages are used.
+            </p>
+
+            <h1 class="head2green">Producer Folder</h1>
+            <p>
+              This directory holds all of the
+              <a href="./architecture_files.html#WebServiceProducer" class="solo">Web Service Producer</a>
+              components.  In any multi-tier architecture chosen (See
+              <a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this
+              directory is placed on the second-tier Web server.
+            </p>
+
+            <h1 class="head2green">Producer DB Folder</h1>
+            <p>
+              This directory holds all of the
+              <a href="./architecture_files.html#WebServiceProducerDB" class="solo">
+                Web Service Producer DB
+              </a>
+              components.  In any multi-tier architecture chosen (See
+              <a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this
+              directory is placed on the second-tier Web server.
+            </p>
+
+            <h1 class="head2green">Schema Folder</h1>
+            <p>
+              This directory holds the current version of the XML schema defining the return
+              format of the Web service requests and the XML schema defining the
+              <a href="./architecture_files.html#WebServiceConsumer" class="solo">
+              Web Service Consumer
+              </a>
+              configuration file format.  In any multi-tier architecture chosen (See
+              <a href="./architecture_deploy.html" class="solo">Deployment Models</a>), this directory
+              is placed on the first-tier Web server.
+            </p>
+
+            <p class="cp">
+              <br />
+              &copy; Copyright IBM Corp. 2007. All rights reserved.
+              IBM&reg;, the IBM logo, DB2&reg;, AIX&reg;, and pureXML&trade; are
+              registered trademarks of International Business Machines Corporation in the
+              United States, other countries, or both.
+
+              Zend and Zend Core are registered trademarks of Zend Technologies Limited,
+              in the United States, other countries, or both.
+
+              Mozilla&reg; and Firefox&reg; are registered trademarks of the Mozilla Foundation in the
+              United States and other countries.
+
+              Microsoft, Windows, Windows NT, Internet Explorer&reg;, and the Windows logo are
+              trademarks of Microsoft Corporation in the United States, other countries, or
+              both.
+
+              Linux is a registered trademark of Linus Torvalds in the United
+              States, other countries, or both.
+
+              Other company, product, or service names
+              may be trademarks or service marks of others.
+            </p>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="navigation">
+      <img src="images/FS_ban_mosaic.gif" alt="Data Management Mosiac imagery" />
+      <div class="container">
+        <div class="left-nav">
+          <div class="top-level">
+            <a href="./index.html">Welcome</a>
+            <a href="./requirements.html">Requirements</a>
+            <a href="setup.html">Setup</a>
+            <div class="second-level">
+              <a href="setup_database.html">Creating the Sample Database</a>
+              <a href="setup_php.html">Setting up PHP</a>
+              <a href="setup_sample.html">Setting up the Sample</a>
+              <a href="setup_testdb.html">Testing the Connection</a>
+              <a href="setup_testservice.html">Testing the Service</a>
+            </div>
+            <a href="using.html">Using</a>
+            <div class="second-level">
+              <a href="../SOADemo/index.html">DB2 Health Monitor Sample</a>
+            </div>
+            <a href="./architecture.html">Architecture</a>
+            <div class="second-level">
+              <a class="active" href="./architecture_directory.html">Directory Structure</a>
+              <a href="./architecture_files.html">File Breakdown</a>
+              <a href="./architecture_deploy.html">Deployment Models</a>
+              <a href="./architecture_errors.html">Error Handling</a>
+              <a href="./architecture_widgets.html">JavaScript Widgets</a>
+            </div>
+            <a href="lessons.html">Lessons Learned</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
